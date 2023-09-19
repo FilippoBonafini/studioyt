@@ -16,8 +16,9 @@ export const schema = {
       },
       {
         name: 'image',
-        type: 'image',
-        title: 'Immagine'
+        type: 'array',
+        title: 'Immagini',
+        of: [{ type: 'image' }]
       },
       {
         name: 'price',
