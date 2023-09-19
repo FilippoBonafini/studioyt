@@ -1,11 +1,12 @@
 import PageIntro from "@/components/PageIntro";
+import { client } from "../../../sanity/lib/client";
 
 export const metadata = {
   title: 'Tulpa Studio | Rental',
   description: 'Sfoglia il catalogo con le varie attrezzature disponibili e trova la soluzione che fa al caso tuo.',
 }
 
-const RentalPage = () => {
+const RentalPage = ({ data }) => {
   return (
     <>
       <PageIntro eyebrow="Rental" title="Ottieni un preventivo in base all'attrezzatura di cui hai bisogno">
@@ -16,5 +17,20 @@ const RentalPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const query = `*[_type == "homePage"][0] {
+    title,
+    description
+  }`;
+
+  const data = await client.fetch(query);
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
 
 export default RentalPage;

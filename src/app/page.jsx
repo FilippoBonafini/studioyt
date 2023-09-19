@@ -5,7 +5,7 @@ import FadeIn from "@/components/FadeIn";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import logoPhobiaDark from "@/images/clients/phobia/logo-dark.svg";
-import { Metadata } from "next";
+
 
 export const metadata = {
   title: 'Tulpa Studio',
