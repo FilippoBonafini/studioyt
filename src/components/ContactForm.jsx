@@ -1,13 +1,49 @@
+'use client';
+
 import React from "react";
 import FadeIn from "./FadeIn";
 import TextInput from "./TextInput";
 import RadioInput from "./RadioInput";
 import Button from "./Button";
 
+
+
+
 const ContactForm = () => {
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+
+
+    const data = {
+      nome: event.target.nome.value,
+      email: event.target.email.value,
+      compagnia: event.target.compagnia.value,
+      telefono: event.target.telefono.value,
+      messaggio: event.target.messaggio.value,
+      budget: event.target.budget.value
+    }
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data)
+    })
+
+    if (response.ok) {
+      console.log('Messaggio inviato')
+    }
+    if (!response.ok) {
+      console.log("Errore nell'invio del messaggio.")
+    }
+  }
+
   return (
     <FadeIn>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Modulo di contatto
         </h2>
@@ -21,11 +57,11 @@ const ContactForm = () => {
           />
           <TextInput
             label="Compagnia"
-            name="Compagnia"
+            name="compagnia"
             autoComplete="Compagnia"
           />
-          <TextInput label="Telefono" type="tel" name="Telefono" autoComplete="tel" />
-          <TextInput label="Messaggio" name="Messaggio" />
+          <TextInput label="Telefono" type="tel" name="telefono" autoComplete="tel" />
+          <TextInput label="Messaggio" name="messaggio" />
           <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
             <fieldset>
               <legend className="text-base/6 text-neutral-500">Budget</legend>

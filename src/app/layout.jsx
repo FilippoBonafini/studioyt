@@ -6,7 +6,7 @@ import "./globals.css";
 export default function Layout({ children }) {
   return (
     <html
-      lang="en"
+      lang="it"
       className="h-full bg-neutral-950 text-base antialiased text-neutral-100"
     >
       <body className="flex min-h-full flex-col">

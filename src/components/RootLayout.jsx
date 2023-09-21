@@ -205,9 +205,13 @@ const RootLayoutInner = ({ children }) => {
                 </div>
               </Container>
             </div>
+
           </motion.div>
+
         </motion.div>
+
       </header>
+
       <motion.div
         layout
         style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
