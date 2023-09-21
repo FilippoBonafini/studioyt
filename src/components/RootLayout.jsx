@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { motion, MotionConfig, useReducedMotion } from "framer-motion";
@@ -12,6 +13,7 @@ import clsx from "clsx";
 import Offices from "./Offices";
 import SocialMedia from "./SocialMedia";
 import Footer from "./Footer";
+import logoImage from "@/images/logos/logo.svg";
 
 const Header = ({
   panelId,
@@ -27,7 +29,10 @@ const Header = ({
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link href={"/"} aria-label="Home">
-          <Logo invert={invert}>Tulpa Studio</Logo>
+          <Logo invert={invert}>
+            <Image src={logoImage} width={80} height={40} />
+            Tulpa Studio
+          </Logo>
         </Link>
         <div className="flex items-center gap-x-8">
           <Button href={"/contatti"} invert={invert}>

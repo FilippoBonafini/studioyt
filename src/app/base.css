@@ -15,6 +15,7 @@
   * {
     scrollbar-width: thin;
     scrollbar-color: #2060df #ffffff;
+    user-select:none
   }
 
   /* Chrome, Edge, and Safari */

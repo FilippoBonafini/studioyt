@@ -23,11 +23,11 @@ export const navigation = [
       { title: "Chi siamo", href: "/chi-siamo" },
       { title: "Studio", href: "/studio" },
       { title: "Rental", href: "/rental" },
-      { title: "contacts", href: "/contacts" },
+      { title: "contacts", href: "/contatti" },
     ],
   },
   {
-    title: "Connect",
+    title: "Social",
     links: SocialMediaProfiles,
   },
 ];

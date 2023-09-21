@@ -1,6 +1,6 @@
 export const schema = {
   types: [{
-    name: 'Attrezzatura',
+    name: 'attrezzatura',
     type: 'document',
     title: 'Attrezzatura',
     fields: [
@@ -24,6 +24,20 @@ export const schema = {
         name: 'price',
         type: 'number',
         title: 'Prezzo'
+      },
+      {
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        option: {
+          source: 'name'
+        }
+      },
+      {
+        name: 'categories',
+        title: 'Categorie',
+        type: 'array',
+        of: [{ type: 'string' }]
       }
     ]
   }],
