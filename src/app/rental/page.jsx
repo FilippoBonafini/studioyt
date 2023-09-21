@@ -8,10 +8,11 @@ export const metadata = {
   description: 'Sfoglia il catalogo con le varie attrezzature disponibili e trova la soluzione che fa al caso tuo.',
 }
 
-export default async function RentalPage() {
-
+async function getData() {
   const data = await client.fetch(`*[_type == "attrezzatura"]`)
+}
 
+const RentalPage = () => {
   return (
     <>
       <PageIntro eyebrow="Rental" title="Ottieni un preventivo in base all'attrezzatura di cui hai bisogno">
@@ -23,6 +24,6 @@ export default async function RentalPage() {
   );
 };
 
-
+export default RentalPage();
 
 
