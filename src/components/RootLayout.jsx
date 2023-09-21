@@ -35,13 +35,16 @@ const Header = ({
             <span className="hidden sm:block">Tulpa Studio</span>
           </Logo>
         </Link>
-        <div className="flex items-center gap-x-8">
-          <Button href={"/carrello"} invert={invert}>
-            <BsCart2 className="h-5 w-5 fill-current" />
-          </Button>
-          <Button href={"/contatti"} invert={invert}>
-            Contattaci
-          </Button>
+        <div className="flex items-center gap-x-4 sm:gap-x-8">
+          <div className="flex items-center gap-2">
+            <Button href={"/carrello"} invert={invert}>
+              <BsCart2 className="h-5 w-5 fill-current" />
+            </Button>
+            <Button href={"/contatti"} invert={invert}>
+              Contattaci
+            </Button>
+          </div>
+
           <button
             ref={toggleRef}
             type="button"
