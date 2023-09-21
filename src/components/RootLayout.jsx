@@ -30,7 +30,7 @@ const Header = ({
         {/* Logo */}
         <Link href={"/"} aria-label="Home">
           <Logo invert={invert}>
-            <Image src={logoImage} width={80} height={40} />
+            <Image src={logoImage} width={80} height={40} alt="Tulpa-Studio-Logo" />
             Tulpa Studio
           </Logo>
         </Link>
