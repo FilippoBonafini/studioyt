@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import logoPhobiaDark from "@/images/clients/phobia/logo-dark.svg";
 
+// import videoBg from "@/videos/presentation.mp4"
 
 export const metadata = {
   title: 'Tulpa Studio',
@@ -15,10 +16,17 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="text-black">
+      {/* 
+      <video loop autoPlay muted>
+        <source src="@/videos/presentation.mp4" type="video/mp4" />
+      </video> */}
+
+
       <Container className="mt-24 sm:mt-32">
         <FadeIn className="max-w-3xl">
+
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-            Dal pensiero alla forma
+            Dal pensiero alla <span className="text-blue-700">forma</span>
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
             Trasformiamo le idee in progetti reali.

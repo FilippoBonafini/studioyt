@@ -29,17 +29,17 @@ const StylizedImage = ({ shape = 0, className, ...props }) => {
         "relative flex aspect-[719/680] w-full grayscale"
       )}
     >
-      <svg viewBox={`0 0 ${width} ${height}`} fill="none" className="h-full">
+      {/* <svg viewBox={`0 0 ${width} ${height}`} fill="none" className="h-full">
         <g clipPath={`url(#${id}-clip)`} className="group">
           <g className="origin-center scale-100 transition duration-500 motion-safe:group-hover:scale-105">
-            <foreignObject width={width} height={height}>
-              <Image
-                alt=""
-                className="w-full bg-neutral-100 object-cover"
-                style={{ aspectRatio: `${width} / ${height}` }}
-                {...props}
-              />
-            </foreignObject>
+            <foreignObject width={width} height={height}> */}
+      <Image
+        alt=""
+        className="w-full bg-neutral-100 object-cover rounded-sm shadow-md"
+        style={{ aspectRatio: `${width} / ${height}` }}
+        {...props}
+      />
+      {/* </foreignObject>
           </g>
           <use
             href={`#${id}-shape`}
@@ -57,7 +57,7 @@ const StylizedImage = ({ shape = 0, className, ...props }) => {
             />
           </clipPath>
         </defs>
-      </svg>
+      </svg> */}
     </div>
   );
 };
