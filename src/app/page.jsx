@@ -13,11 +13,12 @@ export const metadata = {
   description: 'Dal pensiero alla forma',
 }
 
+
 export default function Home() {
   return (
     <main className="text-black mt-10">
 
-      <video loop autoPlay muted>
+      <video loop autoPlay muted className="w-full min-h-screen object-cover">
         <source src="/presentation.mp4" type="video/mp4" />
       </video>
 
