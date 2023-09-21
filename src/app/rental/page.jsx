@@ -1,5 +1,5 @@
 import PageIntro from "@/components/PageIntro";
-import { client } from "../../../sanity/lib/client";
+// import { client } from "../../../sanity/lib/client";
 
 
 
@@ -8,9 +8,9 @@ export const metadata = {
   description: 'Sfoglia il catalogo con le varie attrezzature disponibili e trova la soluzione che fa al caso tuo.',
 }
 
-async function getData() {
-  const data = await client.fetch(`*[_type == "attrezzatura"]`)
-}
+// async function getData() {
+//   const data = await client.fetch(`*[_type == "attrezzatura"]`)
+// }
 
 const RentalPage = () => {
   return (
