@@ -1,6 +1,7 @@
 import { navigation } from "@/constants";
 import Link from "next/link";
 
+
 const FooterNavigation = () => {
   return (
     <nav>
