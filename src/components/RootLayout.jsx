@@ -31,7 +31,7 @@ const Header = ({
         <Link href={"/"} aria-label="Home">
           <Logo invert={invert}>
             <Image src={logoImage} width={80} height={40} alt="Tulpa-Studio-Logo" />
-            Tulpa Studio
+            <span className="hidden sm:block">Tulpa Studio</span>
           </Logo>
         </Link>
         <div className="flex items-center gap-x-8">
