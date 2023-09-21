@@ -24,6 +24,6 @@ const RentalPage = () => {
   );
 };
 
-export default RentalPage();
+export default RentalPage;
 
 
