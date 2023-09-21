@@ -13,7 +13,7 @@ const ContactSection = () => {
             Raccontaci del tuo progetto
           </h2>
           <div className="mt-6 flex">
-            <Button href={"/contatti"} invert>
+            <Button className="bg-blue-700 text-white hover:text-blue-700" href={"/contatti"} invert>
               Contattaci
             </Button>
           </div>
