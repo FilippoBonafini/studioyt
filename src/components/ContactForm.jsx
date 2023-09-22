@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import FadeIn from "./FadeIn";
 import TextInput from "./TextInput";
 import RadioInput from "./RadioInput";
@@ -11,6 +11,9 @@ import Button from "./Button";
 
 export default function ContactForm() {
 
+  const [messageSent, setMessageSent] = useState(false);
+  const messageRef = useRef(null);
+  const [messageContent, setContent] = useState('')
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -32,15 +35,23 @@ export default function ContactForm() {
     })
     // console.log(response)
     if (response.ok) {
-      console.log('Messaggio inviato   status:' + response.status)
+      setMessageSent(true);
+      setContent('MESSAGGIO INVIATO')
+      messageRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     if (!response.ok) {
-      console.log("Errore nell'invio del messaggio.   Status:" + response.status)
+      setContent("ERRORE NELL'INVIO")
+      messageRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
   return (
     <FadeIn>
+      <div ref={messageRef} id="message" className="my-6">
+        {messageSent && (
+          <span className={setMessageSent ? "text-2xl text-green-600 font-extrabold" : "text-2xl text-red-600 font-extrabold"}>{messageContent}</span>
+        )}
+      </div>
       <form onSubmit={handleSubmit}>
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Modulo di contatto
