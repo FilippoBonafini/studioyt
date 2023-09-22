@@ -32,6 +32,7 @@ export default async function contact(req, res) {
             subject: 'Un nuovo contatto!',
             html: html,
             secure: true,
+            port: 587,
             timeout: 5000,
         });
 
