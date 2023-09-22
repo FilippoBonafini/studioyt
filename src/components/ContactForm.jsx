@@ -9,12 +9,10 @@ import Button from "./Button";
 
 
 
-const ContactForm = () => {
+export default function ContactForm() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-
-
 
     const data = {
       nome: event.target.nome.value,
@@ -24,6 +22,7 @@ const ContactForm = () => {
       messaggio: event.target.messaggio.value,
       budget: event.target.budget.value
     }
+    console.log(data)
 
     const response = await fetch("/api/contact", {
       method: "POST",
@@ -81,5 +80,3 @@ const ContactForm = () => {
     </FadeIn>
   );
 };
-
-export default ContactForm;

@@ -1,11 +1,14 @@
+'use client'
+
 import Container from "@/components/Container"
 import Button from "@/components/Button";
 import Link from "next/link";
+import { Router, useRouter } from "next/router";
 
 const page = () => {
     return (
         <Container className="mt-16 text-black">
-            <Link href={".."} scroll={false} prefetch={true}>
+            <Link href={'/rental'} scroll={false} prefetch={true}>
                 <Button>
                     Indietro
                 </Button>
@@ -14,7 +17,7 @@ const page = () => {
                 <div className=" hidden lg:block">immagine</div>
                 <div>contenuto</div>
             </div>
-        </Container>
+        </Container >
     )
 }
 

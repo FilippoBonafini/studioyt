@@ -1,6 +1,8 @@
 const nodemailer = require("nodemailer")
 
-export default async function ContactAPI(req, res) {
+
+
+export default async function contact(req, res) {
 
     const { nome, email, compagnia, telefono, messaggio, budget } = req.body
 
@@ -33,4 +35,3 @@ export default async function ContactAPI(req, res) {
 
     return res.status(200).json({ message: "success" })
 }
-
