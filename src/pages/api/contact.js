@@ -31,6 +31,7 @@ export default async function contact(req, res) {
             to: 'filippo.bonafini@outlook.com',
             subject: 'Un nuovo contatto!',
             html: html,
+            secure: true,
             timeout: 5000,
         });
 
