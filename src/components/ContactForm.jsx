@@ -30,6 +30,13 @@ export default function ContactForm() {
       },
       body: JSON.stringify(data)
     })
+
+    if (response.ok) {
+      console.log('Messaggio inviato' + response)
+    }
+    if (!response.ok) {
+      console.log("Errore nell'invio del messaggio." + response)
+    }
   }
 
   return (

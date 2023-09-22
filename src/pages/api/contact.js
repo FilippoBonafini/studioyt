@@ -33,10 +33,10 @@ export default async function contact(req, res) {
             html: html,
             timeout: 5000,
         })
-        console.log('email inviata', info)
+        // console.log('email inviata', info)
         return res.status(200).json({ message: "success" })
     } catch (error) {
-        console.log('errore nell invio', error)
+        // console.log('errore nell invio', error)
         return res.status(400).json({ message: "error" })
     }
 
