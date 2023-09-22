@@ -26,18 +26,20 @@ export default async function contact(req, res) {
     });
 
     try {
-        const info = transporter.sendMail({
+        const info = await transporter.sendMail({
             from: 'NewContact <filippo.bonafini@outlook.com>',
             to: 'filippo.bonafini@outlook.com',
             subject: 'Un nuovo contatto!',
             html: html,
             timeout: 5000,
-        })
-        // console.log('email inviata', info)
-        return res.status(200).json({ message: "success" })
+        });
+
+        console.log('Email inviata:', info);
+
+        return res.status(200).json({ message: "success" });
     } catch (error) {
-        // console.log('errore nell invio', error)
-        return res.status(400).json({ message: "error" })
+        console.error('Errore nell invio:', error);
+        return res.status(400).json({ message: "error" });
     }
 
 }
