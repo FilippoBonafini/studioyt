@@ -22,7 +22,6 @@ export default function ContactForm() {
       messaggio: event.target.messaggio.value,
       budget: event.target.budget.value
     }
-    console.log(data)
 
     const response = await fetch("/api/contact", {
       method: "POST",
@@ -31,13 +30,6 @@ export default function ContactForm() {
       },
       body: JSON.stringify(data)
     })
-
-    if (response.ok) {
-      console.log('Messaggio inviato')
-    }
-    if (!response.ok) {
-      console.log("Errore nell'invio del messaggio.")
-    }
   }
 
   return (
