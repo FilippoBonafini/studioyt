@@ -14,7 +14,8 @@ import Offices from "./Offices";
 import SocialMedia from "./SocialMedia";
 import Footer from "./Footer";
 import logoImage from "@/images/logos/logo.svg";
-import { BsCart2 } from "react-icons/bs";
+import CartButton from "./CartButton";
+
 
 const Header = ({
   panelId,
@@ -24,6 +25,8 @@ const Header = ({
   onToggle,
   toggleRef,
 }) => {
+
+
   // Container
   return (
     <Container>
@@ -37,9 +40,7 @@ const Header = ({
         </Link>
         <div className="flex items-center gap-x-4 sm:gap-x-8">
           <div className="flex items-center gap-2">
-            <Button href={"/carrello"} invert={invert}>
-              <BsCart2 className="h-5 w-5 fill-current" />
-            </Button>
+            <CartButton invert={invert} count={1} />
             <Button href={"/contatti"} invert={invert}>
               Contattaci
             </Button>
@@ -124,6 +125,9 @@ const RootLayoutInner = ({ children }) => {
   const closeRef = useRef();
   const navRef = useRef();
   const shouldReduceMotion = useReducedMotion();
+
+
+
   useEffect(() => {
     function onClick(event) {
       if (event.target.closest("a")?.href === window.location.href) {
@@ -156,6 +160,7 @@ const RootLayoutInner = ({ children }) => {
                 closeRef.current?.focus({ preventScroll: true })
               );
             }}
+            count={1}
           />
         </div>
         <motion.div

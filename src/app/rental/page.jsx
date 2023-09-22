@@ -1,30 +1,17 @@
+'use client'
 import PageIntro from "@/components/PageIntro";
 import Container from "@/components/Container";
-// import { client } from "../../../sanity/lib/client";
-
-
-
-export const metadata = {
-  title: 'Tulpa Studio | Rental',
-  description: 'Sfoglia il catalogo con le varie attrezzature disponibili e trova la soluzione che fa al caso tuo.',
-}
-
-// async function getData() {
-//   const data = await client.fetch(`*[_type == "attrezzatura"]`)
-// }
+import Rental from "@/components/Rental";
 
 const RentalPage = () => {
   return (
     <>
-      <PageIntro eyebrow="Rental" title="Ottieni un preventivo in base all'attrezzatura di cui hai bisogno" />
-
+      <PageIntro eyebrow="Rental" title="Preventivo personalizzato" />
       <Container>
-        <h1 className="text-black">corpo del rental</h1>
+        <Rental />
       </Container>
     </>
   );
 };
 
 export default RentalPage;
-
-
