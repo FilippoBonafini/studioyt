@@ -193,9 +193,6 @@ const RootLayoutInner = ({ children }) => {
               <Container>
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div>
-                    <h2 className="font-display text-base font-semibold text-white">
-                      Ci trovi:
-                    </h2>
                     <Offices
                       invert
                       className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
@@ -210,13 +207,9 @@ const RootLayoutInner = ({ children }) => {
                 </div>
               </Container>
             </div>
-
           </motion.div>
-
         </motion.div>
-
       </header>
-
       <motion.div
         layout
         style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
