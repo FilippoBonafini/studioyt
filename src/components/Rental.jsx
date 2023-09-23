@@ -28,6 +28,7 @@ export default function Rental() {
     return <>
         {data.map((item) => (
             <Card
+                key={item._id}
                 title={item.name}
                 price={item.price}
             />
