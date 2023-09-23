@@ -5,6 +5,7 @@ import FadeIn from "./FadeIn";
 import TextInput from "./TextInput";
 import RadioInput from "./RadioInput";
 import Button from "./Button";
+import MailOk from "./MailOk";
 
 
 
@@ -14,8 +15,11 @@ export default function ContactForm() {
   const [messageSent, setMessageSent] = useState(false);
   const messageRef = useRef(null);
   const [messageContent, setContent] = useState('')
+  const [activeForm, setActiveForm] = useState(true)
+
   async function handleSubmit(event) {
     event.preventDefault();
+    setActiveForm(false);
 
     const data = {
       nome: event.target.nome.value,
@@ -35,22 +39,40 @@ export default function ContactForm() {
     })
     // console.log(response)
     if (response.ok) {
+      setActiveForm(false);
       setMessageSent(true);
-      setContent('MESSAGGIO INVIATO')
-      messageRef.current.scrollIntoView({ behavior: 'smooth' });
+      setContent('MESSAGGIO INVIATO');
+      scrollIntoViewWithOffset(messageRef.current, 40);
     }
+
     if (!response.ok) {
-      setContent("ERRORE NELL'INVIO")
-      messageRef.current.scrollIntoView({ behavior: 'smooth' });
+      setActiveForm(false);
+      setContent("ERRORE NELL'INVIO");
+      scrollIntoViewWithOffset(messageRef.current, 40);
+    }
+
+    function scrollIntoViewWithOffset(element, offset) {
+      if (element) {
+        const scrollOptions = {
+          behavior: 'smooth',
+          block: 'start',
+        };
+
+        const currentPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const newPosition = currentPosition - offset;
+
+        window.scrollTo({
+          top: newPosition,
+          ...scrollOptions,
+        });
+      }
     }
   }
 
   return (
     <FadeIn>
       <div ref={messageRef} id="message" className="my-6">
-        {messageSent && (
-          <span className={setMessageSent ? "text-2xl text-green-600 font-extrabold" : "text-2xl text-red-600 font-extrabold"}>{messageContent}</span>
-        )}
+        <MailOk message={messageContent} />
       </div>
       <form onSubmit={handleSubmit}>
         <h2 className="font-display text-base font-semibold text-neutral-950">
@@ -83,7 +105,7 @@ export default function ContactForm() {
             </div>
           </div>
         </div>
-        <Button type="submit" className="mt-10">
+        <Button disabled={activeForm ? false : true} type="submit" className="mt-10">
           Iniziamo a lavorare insieme
         </Button>
       </form>
