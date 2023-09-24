@@ -13,7 +13,7 @@ const Card = ({ item }) => {
 
     return (
         <FadeIn>
-            <div className="my-4 rounded-md p-2 bg-white text-black shadow-xl">
+            <div className=" rounded-sm p-2 bg-white text-black shadow-md">
                 <h1>{item.name}</h1>
                 <h2>{item.price}$</h2>
                 <Button className="rounded-md" onClick={addToLocalStorage}>Add</Button>

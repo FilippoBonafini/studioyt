@@ -20,13 +20,16 @@ export default function Rental() {
     }, []);
 
     return <>
+        <div className="grid  lg:grid-cols-4 gap-4 md:grid-cols-2 sm:grid-cols-1">
 
-        {data.map((item) => (
-            <Card
-                key={item._id}
-                item={item}
-            />
-        ))}
+            {data.map((item) => (
+                <Card
+                    key={item._id}
+                    item={item}
+                />
+            ))}
+
+        </div>
 
     </>
 }
