@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../../sanity/lib/client";
 import Card from "./Card";
+import FadeIn from "./FadeIn";
 
 export default function Rental() {
     const [data, setData] = useState([]);
@@ -26,6 +27,7 @@ export default function Rental() {
     // }, [data]);
 
     return <>
+
         {data.map((item) => (
             <Card
                 key={item._id}
@@ -33,5 +35,6 @@ export default function Rental() {
                 price={item.price}
             />
         ))}
-    </>;
+
+    </>
 }

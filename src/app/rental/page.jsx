@@ -6,10 +6,14 @@ import Rental from "@/components/Rental";
 const RentalPage = () => {
   return (
     <>
-      <PageIntro eyebrow="Rental" title="Preventivo personalizzato" />
-      <Container>
-        <Rental />
-      </Container>
+
+      <PageIntro title={"Rental"} />
+      <div className="bg-blue-100 py-6">
+        <Container>
+          <Rental />
+        </Container >
+      </div>
+
     </>
   );
 };
