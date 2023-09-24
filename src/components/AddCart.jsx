@@ -1,8 +1,18 @@
 import Button from "./Button"
 
-const AddCart = () => {
+const AddCart = ({ item }) => {
+
+    const addToLocalStorage = (item) => {
+        const itemToAdd = { item };
+        const currentItems = JSON.parse(localStorage.getItem("items")) || [];
+        currentItems.push(itemToAdd);
+        localStorage.setItem("items", JSON.stringify(currentItems));
+    };
+
     return (
-        <div>AddCart</div>
+        <Button className="rounded-md" onClick={addToLocalStorage(item)}>
+            Add
+        </Button>
     )
 }
 

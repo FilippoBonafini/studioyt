@@ -1,22 +1,14 @@
 import Button from "./Button"
 import FadeIn from "./FadeIn";
+import AddCart from "./AddCart";
 
 const Card = ({ item }) => {
-
-    const addToLocalStorage = () => {
-        const itemToAdd = { item };
-        const currentItems = JSON.parse(localStorage.getItem("items")) || [];
-        currentItems.push(itemToAdd);
-        localStorage.setItem("items", JSON.stringify(currentItems));
-    };
-
-
     return (
         <FadeIn>
             <div className=" rounded-sm p-2 bg-white text-black shadow-md">
                 <h1>{item.name}</h1>
                 <h2>{item.price}$</h2>
-                <Button className="rounded-md" onClick={addToLocalStorage}>Add</Button>
+                <AddCart item={item} />
             </div>
         </FadeIn>
     )
