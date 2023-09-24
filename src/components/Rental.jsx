@@ -17,22 +17,14 @@ export default function Rental() {
         }
 
         fetchData();
-    }, []); // Esegui solo al mount iniziale
-
-    // // Stampa i dati dopo il caricamento
-    // useEffect(() => {
-    //     if (data && data.length > 0) {
-    //         console.log(data[0]);
-    //     }
-    // }, [data]);
+    }, []);
 
     return <>
 
         {data.map((item) => (
             <Card
                 key={item._id}
-                title={item.name}
-                price={item.price}
+                item={item}
             />
         ))}
 
