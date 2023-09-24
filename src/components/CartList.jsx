@@ -1,9 +1,18 @@
 'use client';
 
+import React, { useEffect, useState } from "react";
 import FadeIn from "./FadeIn";
 
 const CartList = () => {
-    const currentItems = JSON.parse(localStorage.getItem("items")) || [];
+    const [currentItems, setCurrentItems] = useState([]);
+
+    useEffect(() => {
+        // Verifica se l'applicazione è in esecuzione nel browser
+        if (typeof window !== 'undefined') {
+            const itemsFromLocalStorage = JSON.parse(localStorage.getItem("items")) || [];
+            setCurrentItems(itemsFromLocalStorage);
+        }
+    }, []);
 
     return (
         <FadeIn className="max-w-3xl">
@@ -15,7 +24,8 @@ const CartList = () => {
                         </li>
                     ))}
                 </ul>
-            </div></FadeIn>
+            </div>
+        </FadeIn>
     );
 };
 

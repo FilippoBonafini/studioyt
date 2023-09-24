@@ -10,7 +10,6 @@ const CartButton = ({ invert, count }) => {
                 <span className="text-xs">{count}</span>
                 <BsCart2 className="h-5 w-5 fill-current" />
             </div>
-
         </Button>
     )
 }
