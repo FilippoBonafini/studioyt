@@ -1,4 +1,4 @@
-import Button from "./Button"
+'use client'
 import FadeIn from "./FadeIn";
 import AddCart from "./AddCart";
 

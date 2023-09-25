@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../../sanity/lib/client";
 import Card from "./Card";
-import FadeIn from "./FadeIn";
+import Searchbar from "./Searchbar";
 
 export default function Rental() {
     const [data, setData] = useState([]);
@@ -20,7 +20,10 @@ export default function Rental() {
     }, []);
 
     return <>
-        <div className="grid  lg:grid-cols-4 gap-4 md:grid-cols-2 sm:grid-cols-1">
+
+        <Searchbar />
+
+        <div className=" mt-14 grid  lg:grid-cols-4 gap-4 md:grid-cols-2 sm:grid-cols-1">
 
             {data.map((item) => (
                 <Card

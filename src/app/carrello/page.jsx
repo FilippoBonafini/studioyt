@@ -9,7 +9,7 @@ import FadeIn from "@/components/FadeIn";
 const page = () => {
     return (
         <Container className="mt-16 text-black">
-            <FadeIn className="max-w-3xl">
+            <FadeIn className="max-w-4xl">
                 <Link href={'/rental'} scroll={false} prefetch={true}>
                     <Button>
                         Indietro

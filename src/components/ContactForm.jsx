@@ -37,7 +37,6 @@ export default function ContactForm() {
       },
       body: JSON.stringify(data)
     })
-    // console.log(response)
     if (response.ok) {
       setActiveForm(false);
       setMessageSent(true);

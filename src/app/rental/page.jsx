@@ -10,7 +10,7 @@ const RentalPage = () => {
     <>
 
       <PageIntro title={"Rental"} />
-      <div className="bg-blue-100 py-6">
+      <div className="py-6 bg-gray-50">
         <FadeIn>
           <Container>
             <Rental />

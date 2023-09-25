@@ -36,8 +36,6 @@ export default async function contact(req, res) {
             timeout: 5000,
         });
 
-        console.log('Email inviata:', info);
-
         return res.status(200).json({ message: "success" });
     } catch (error) {
         console.error('Errore nell invio:', error);
