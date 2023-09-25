@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CartListButtons from "./CartListButtons";
+import Link from "next/link";
 
 const CartList = () => {
     const [currentItems, setCurrentItems] = useState([]);
@@ -61,7 +62,11 @@ const CartList = () => {
     return (
         <div className="text-black">
             {currentItems.length === 0 ? (
-                <p>Il tuo carrello è vuoto.</p>
+                <div>
+                    <p className="my-4 text-2xl">Il tuo carrello è vuoto</p>
+                    <Link href={'/rental'} className="text-blue-700 underline underline-offset-4">Vai al rental</Link>
+                </div>
+
             ) : (
                 <div>
                     <ul>

@@ -8,7 +8,7 @@ import MailOk from "./MailOk";
 
 
 
-export default function RentalForm() {
+export default function RentalForm({ onEmptyCart }) {
 
     const [messageSent, setMessageSent] = useState(false);
     const messageRef = useRef(null);
@@ -44,6 +44,12 @@ export default function RentalForm() {
             setMessageSent(true);
             setContent('PREVENTIVO RICHIESTO');
             scrollIntoViewAtTop(messageRef.current, 40); // Scroll in cima
+
+            // Svuota il carrello chiamando la funzione passata come prop
+            // Svuota il carrello chiamando la funzione passata come prop
+            if (onEmptyCart) {
+                onEmptyCart();
+            }
         }
 
         if (!response.ok) {
