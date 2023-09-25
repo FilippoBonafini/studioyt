@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import { AiFillDelete } from "react-icons/ai";
+
 
 const CartListButtons = ({ item, onIncrease, onDecrease, onDelete }) => {
     const [quantity, setQuantity] = useState(item.quantity);
@@ -25,7 +27,9 @@ const CartListButtons = ({ item, onIncrease, onDecrease, onDelete }) => {
         <div className="flex gap-1">
             <Button onClick={handleIncrease}>+</Button>
             <Button onClick={handleDecrease}>-</Button>
-            <Button onClick={onDelete}>Delete</Button>
+            <Button className={'flex justify-center items-center'} onClick={onDelete}>
+                <AiFillDelete />
+            </Button>
         </div>
     );
 };
