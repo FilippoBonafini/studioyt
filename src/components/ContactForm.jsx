@@ -38,14 +38,14 @@ export default function ContactForm() {
       body: JSON.stringify(data)
     })
     if (response.ok) {
-      setActiveForm(false);
+      setActiveForm(true);
       setMessageSent(true);
       setContent('MESSAGGIO INVIATO');
       scrollIntoViewWithOffset(messageRef.current, 40);
     }
 
     if (!response.ok) {
-      setActiveForm(false);
+      setActiveForm(true);
       setContent("ERRORE NELL'INVIO");
       scrollIntoViewWithOffset(messageRef.current, 40);
     }
@@ -71,10 +71,10 @@ export default function ContactForm() {
   return (
     <FadeIn>
       <div ref={messageRef} id="message" className="my-6">
-        <MailOk message={messageContent} />
+        <MailOk message={messageContent} linkVisible={messageSent} />
       </div>
       <form onSubmit={handleSubmit}>
-        <h2 className="font-display text-base font-semibold text-neutral-950">
+        <h2 className="font-display text-base font-semibold text-blue-800">
           Modulo di contatto
         </h2>
         <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
@@ -92,9 +92,9 @@ export default function ContactForm() {
           />
           <TextInput label="Telefono" type="tel" name="telefono" autoComplete="tel" />
           <TextInput label="Messaggio" name="messaggio" />
-          <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
+          <div className="border border-blue-700 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
             <fieldset>
-              <legend className="text-base/6 text-neutral-500">Budget</legend>
+              <legend className="text-base/6 text-blue-800">Budget</legend>
             </fieldset>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-8">
               <RadioInput label="€0 – €1K" name="budget" value="1" />

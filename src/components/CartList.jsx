@@ -49,38 +49,48 @@ const CartList = () => {
         localStorage.setItem("items", JSON.stringify(items));
     };
 
+    // Calcola il totale del carrello
+    const calculateTotal = () => {
+        let total = 0;
+        currentItems.forEach((item) => {
+            total += item.price * item.quantity;
+        });
+        return total;
+    };
+
     return (
         <div className="text-black">
             {currentItems.length === 0 ? (
                 <p>Il tuo carrello è vuoto.</p>
             ) : (
-                <ul>
-                    {currentItems.map((item, index) => (
-                        <li
-                            key={index}
-                            className="my-3 flex justify-between border-blue-900 border-2 p-3 items-center rounded-md"
-                        >
-                            <div className="flex flex-col">
-                                <span>{item.name}</span>
-                                <span>{item.price}€</span>
-                            </div>
+                <div>
+                    <ul>
+                        {currentItems.map((item, index) => (
+                            <li
+                                key={index}
+                                className="my-3 flex justify-between border-blue-900 border-2 p-3 items-center rounded-md"
+                            >
+                                <div className="flex flex-col">
+                                    <span>{item.name}</span>
+                                    <span>{item.price}€</span>
+                                </div>
+                                <div>
+                                    <div>Quantità: {item.quantity}</div>
+                                    <CartListButtons
+                                        item={item}
+                                        onIncrease={(newQuantity) => increaseQuantity(item, newQuantity)}
+                                        onDecrease={(newQuantity) => decreaseQuantity(item, newQuantity)}
+                                        onDelete={() => removeFromLocalStorage(item)}
+                                    />
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
 
-                            <div>
-                                x {item.quantity}
-                            </div>
-                            <div>
-
-                                <CartListButtons
-                                    item={item}
-                                    onIncrease={(newQuantity) => increaseQuantity(item, newQuantity)}
-                                    onDecrease={(newQuantity) => decreaseQuantity(item, newQuantity)}
-                                    onDelete={() => removeFromLocalStorage(item)}
-                                />
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+                    <span>Totale: {calculateTotal()}€</span>
+                </div>
             )}
+
         </div>
     );
 };

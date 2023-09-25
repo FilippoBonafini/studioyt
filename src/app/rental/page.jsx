@@ -1,4 +1,3 @@
-'use client'
 import PageIntro from "@/components/PageIntro";
 import Container from "@/components/Container";
 import Rental from "@/components/Rental";

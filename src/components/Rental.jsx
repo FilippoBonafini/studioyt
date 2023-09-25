@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from "react";
 import { client } from "../../sanity/lib/client";
 import Card from "./Card";
@@ -15,24 +16,19 @@ export default function Rental() {
                 console.error("Errore durante il recupero dei dati da Sanity:", error);
             }
         }
-
         fetchData();
     }, []);
 
     return <>
 
         <Searchbar />
-
         <div className=" mt-14 grid  lg:grid-cols-4 gap-4 md:grid-cols-2 sm:grid-cols-1">
-
             {data.map((item) => (
                 <Card
                     key={item._id}
                     item={item}
                 />
             ))}
-
         </div>
-
     </>
 }
