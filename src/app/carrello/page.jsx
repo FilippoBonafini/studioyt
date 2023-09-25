@@ -26,7 +26,7 @@ const Page = () => {
                         Indietro
                     </Button>
                 </Link>
-                <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-20">
+                <div className=" grid md:grid-cols-2 sm:grid-cols-1 gap-20">
                     <div>
                         <CartList />
                     </div>

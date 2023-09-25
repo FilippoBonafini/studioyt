@@ -26,8 +26,6 @@ const Header = ({
   toggleRef,
 }) => {
 
-
-  // Container
   return (
     <Container>
       <div className="flex items-center justify-between">
@@ -40,7 +38,7 @@ const Header = ({
         </Link>
         <div className="flex items-center gap-x-4 sm:gap-x-8">
           <div className="flex items-center gap-2">
-            <CartButton invert={invert} count={1} />
+            <CartButton invert={invert} />
             <Button href={"/contatti"} invert={invert}>
               Contattaci
             </Button>

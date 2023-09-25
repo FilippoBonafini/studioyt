@@ -69,11 +69,11 @@ export default function RentalForm() {
 
     return (
         <FadeIn>
-            <div ref={messageRef} id="message" className="my-6">
+            <div ref={messageRef} id="message" className="my-6 sticky top-0">
                 <MailOk message={messageContent} linkVisible={false} />
             </div>
             <form onSubmit={handleSubmit}>
-                <h2 className="font-display text-base font-semibold text-neutral-950">
+                <h2 className=" font-display text-base font-semibold text-neutral-950">
                     Finalizza
                 </h2>
                 <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
