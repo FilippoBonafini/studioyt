@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Button from "./Button";
 
-const AddCart = ({ item }) => {
+const AddCart = ({ item, confermPop }) => {
     const addToLocalStorage = () => {
         // Ottieni l'array corrente dal localStorage o inizializza un array vuoto
         const currentItems = JSON.parse(localStorage.getItem("items")) || [];
@@ -19,7 +19,7 @@ const AddCart = ({ item }) => {
 
         // Aggiorna il localStorage con l'array aggiornato
         localStorage.setItem("items", JSON.stringify(currentItems));
-
+        confermPop();
     };
 
     return (

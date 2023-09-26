@@ -3,9 +3,13 @@ import React, { useEffect, useState } from "react";
 import { client } from "../../sanity/lib/client";
 import Card from "./Card";
 import Searchbar from "./Searchbar";
+import AddConferm from "./AddConferm";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Rental() {
     const [data, setData] = useState([]);
+    const [conferm, setConferm] = useState(false)
+
 
     useEffect(() => {
         async function fetchData() {
@@ -19,6 +23,15 @@ export default function Rental() {
         fetchData();
     }, []);
 
+
+    const confermPop = () => {
+        setConferm(true)
+        setTimeout(() => {
+            setConferm(false)
+        }, 3000);
+
+    }
+
     return <>
 
         <Searchbar />
@@ -27,8 +40,28 @@ export default function Rental() {
                 <Card
                     key={item._id}
                     item={item}
+                    confermPop={confermPop}
                 />
             ))}
         </div>
+        {conferm ? (<AnimatePresence>
+            {conferm && (
+                <div>
+                    <div className="flex fixed bottom-0 right-0">
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }} // Stato iniziale (fuori schermo)
+                            animate={{ opacity: 1, y: 0 }} // Animazione di entrata
+                            exit={{ opacity: 0, y: -20 }} // Animazione di uscita
+                            transition={{ duration: 0.3 }} // Durata dell'animazione in secondi
+                        >  <AddConferm />
+                        </motion.div>
+                    </div>
+                </div>
+
+
+            )}
+        </AnimatePresence >) : (<></>)
+        }
+
     </>
 }
