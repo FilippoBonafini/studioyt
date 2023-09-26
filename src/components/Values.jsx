@@ -1,5 +1,6 @@
 import React from "react";
 import GridPattern from "./GridPattern";
+import Button from "./Button";
 import SectionIntro from "./SectionIntro";
 import Container from "./Container";
 import { GridList, GridListItem } from "./GridList";
@@ -20,6 +21,10 @@ const Values = () => {
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ut blanditiis cupiditate laudantium omnis porro incidunt fugiat fugit, reiciendis deleniti aspernatur ipsum eligendi quod repudiandae nobis amet esse quae doloribus.
         </p>
+
+        <a href="/planimetria.pdf" target="_blank" download>
+          <Button className={'mt-5 text-xl'}>Scarica</Button>
+        </a>
       </SectionIntro>
     </div>
   );
