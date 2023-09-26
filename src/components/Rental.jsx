@@ -22,7 +22,7 @@ export default function Rental() {
     return <>
 
         <Searchbar />
-        <div className=" mt-14 grid  lg:grid-cols-4 gap-4 md:grid-cols-2 sm:grid-cols-1">
+        <div className=" mt-14 grid  lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1">
             {data.map((item) => (
                 <Card
                     key={item._id}

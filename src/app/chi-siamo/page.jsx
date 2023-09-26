@@ -12,7 +12,7 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <><div className="grid grid-cols-1 lg:grid-cols-2">
+    <>
       <PageIntro eyebrow="Chi siamo" title="Dal pensiero alla forma">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum similique mollitia quisquam molestiae eos ullam, exercitationem iure tenetur ut! Quas porro nulla dolores. Magnam eligendi fugit, voluptatum cupiditate esse amet.
@@ -26,19 +26,16 @@ const AboutPage = () => {
           </p>
         </div>
       </PageIntro>
-      <div className="mt-24 p-5">
 
-        <video
 
-          controls
-          className=" h-full aspect-square object-cover rounded-xl "
-        >
-          <source src="/presentation.mp4" type="video/mp4" />
-        </video>
-      </div>
+      {/* <video
 
-    </div>
-
+        controls
+        autoPlay={true}
+        className=" h-full aspect-square object-cover rounded-xl "
+      >
+        <source src="/presentation.mp4" type="video/mp4" />
+      </video> */}
       <Container className="mt-20">
         <StatList>
           <StatListItem value="35" label="Macchine professionali" />
