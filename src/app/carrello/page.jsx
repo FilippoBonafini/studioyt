@@ -7,6 +7,11 @@ import CartList from "@/components/CartList";
 import FadeIn from "@/components/FadeIn";
 import RentalForm from "@/components/RentalForm";
 
+export const metadata = {
+    title: 'Tulpa Studio | Carrello',
+    description: "Finalizza il tuo ordine e controlla il tuo carrello",
+}
+
 const Page = () => {
     const [visible, setVisible] = useState(true)
     const [element, setElement] = useState([]);
