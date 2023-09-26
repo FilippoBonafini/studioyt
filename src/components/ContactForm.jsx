@@ -10,7 +10,8 @@ import MailOk from "./MailOk";
 
 
 
-export default function ContactForm() {
+
+export default function ContactForm({ handleSubmitProp }) {
 
   const [messageSent, setMessageSent] = useState(false);
   const messageRef = useRef(null);
@@ -41,27 +42,26 @@ export default function ContactForm() {
       setActiveForm(true);
       setMessageSent(true);
       setContent('MESSAGGIO INVIATO');
-      scrollIntoViewWithOffset(messageRef.current, 40);
+      scrollIntoViewAtTop(messageRef.current, 40); // Scroll in cima
+      handleSubmitProp();
     }
 
     if (!response.ok) {
       setActiveForm(true);
       setContent("ERRORE NELL'INVIO");
-      scrollIntoViewWithOffset(messageRef.current, 40);
+      scrollIntoViewAtTop(messageRef.current, 40); // Scroll in cima
+      handleSubmitProp();
     }
 
-    function scrollIntoViewWithOffset(element, offset) {
+    function scrollIntoViewAtTop(element, offset) {
       if (element) {
         const scrollOptions = {
+          top: 0, // Imposta la posizione in alto
           behavior: 'smooth',
           block: 'start',
         };
 
-        const currentPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const newPosition = currentPosition - offset;
-
         window.scrollTo({
-          top: newPosition,
           ...scrollOptions,
         });
       }

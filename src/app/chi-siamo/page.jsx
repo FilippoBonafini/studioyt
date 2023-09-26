@@ -12,7 +12,7 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <>
+    <><div className="grid grid-cols-1 lg:grid-cols-2">
       <PageIntro eyebrow="Chi siamo" title="Dal pensiero alla forma">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum similique mollitia quisquam molestiae eos ullam, exercitationem iure tenetur ut! Quas porro nulla dolores. Magnam eligendi fugit, voluptatum cupiditate esse amet.
@@ -26,7 +26,15 @@ const AboutPage = () => {
           </p>
         </div>
       </PageIntro>
-      <Container className="mt-16">
+      <div className="mt-24 p-5">
+        <video loop autoPlay muted className="rounded-sm mt-10 w-full h-screen md:h-full object-cover ">
+          <source src="/presentation.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+    </div>
+
+      <Container className="mt-20">
         <StatList>
           <StatListItem value="35" label="Macchine professionali" />
           <StatListItem value="140m²" label="Superficie stage" />

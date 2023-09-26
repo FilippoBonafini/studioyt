@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="text-black mt-10">
+    <main className="text-black mt-20">
 
 
       {/* <video loop autoPlay muted className="w-full h-screen md:h-full object-cover ">

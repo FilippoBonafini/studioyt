@@ -45,8 +45,6 @@ export default function RentalForm({ onEmptyCart }) {
             setContent('PREVENTIVO RICHIESTO');
             scrollIntoViewAtTop(messageRef.current, 40); // Scroll in cima
 
-            // Svuota il carrello chiamando la funzione passata come prop
-            // Svuota il carrello chiamando la funzione passata come prop
             if (onEmptyCart) {
                 onEmptyCart();
             }

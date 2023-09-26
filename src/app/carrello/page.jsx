@@ -26,11 +26,10 @@ const Page = () => {
 
     return (
         <Container className="mt-16 text-black">
-            <FadeIn className="">
-
+            <FadeIn>
                 {visible ? (
                     <>
-                        <Link href={'/rental'} scroll={false} prefetch={true}>
+                        <Link href={'/rental'} prefetch={true}>
                             <Button>
                                 Indietro
                             </Button>
