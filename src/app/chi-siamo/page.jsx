@@ -27,7 +27,12 @@ const AboutPage = () => {
         </div>
       </PageIntro>
       <div className="mt-24 p-5">
-        <video loop autoPlay muted className="rounded-sm mt-10 w-full h-screen md:h-full object-cover ">
+
+        <video
+
+          controls
+          className=" h-full aspect-square object-cover rounded-xl "
+        >
           <source src="/presentation.mp4" type="video/mp4" />
         </video>
       </div>
