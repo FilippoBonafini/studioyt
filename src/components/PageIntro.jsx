@@ -6,7 +6,7 @@ import clsx from "clsx";
 const PageIntro = ({ eyebrow, title, children, centered = false }) => {
   return (
     <Container
-      className={clsx("mt-24 sm:mt-32 lg:mt-40", centered && "text-center")}
+      className={clsx("mt-24 sm:mt-32 lg:mt-24", centered && "text-center")}
     >
       <FadeIn>
         <h1>

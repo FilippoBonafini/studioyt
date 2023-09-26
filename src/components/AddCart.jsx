@@ -23,8 +23,8 @@ const AddCart = ({ item, confermPop }) => {
     };
 
     return (
-        <Button className="rounded-md" onClick={addToLocalStorage}>
-            Add
+        <Button className="rounded-full hover:bg-white hover:text-black" onClick={addToLocalStorage}>
+            {item.price}€
         </Button>
     );
 };
