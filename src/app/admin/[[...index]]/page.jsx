@@ -15,3 +15,7 @@ import config from '../../../../sanity.config'
 export default function StudioPage() {
   return <div className='mt-12'><NextStudio config={config} /></div>
 }
+
+StudioPage.getLayout = function getLayout(page) {
+  return null;
+}
