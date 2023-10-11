@@ -38,6 +38,11 @@ export const schema = {
           },
         },
         {
+          name: 'priority',
+          title: 'Priorità',
+          type: 'number'
+        },
+        {
           name: 'categories',
           title: 'Categorie',
           type: 'array',

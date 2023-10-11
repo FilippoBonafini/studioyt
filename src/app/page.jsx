@@ -11,6 +11,7 @@ import logoPhobiaDark from "@/images/clients/phobia/logo-dark.svg";
 export const metadata = {
   title: 'Tulpa Studio',
   description: 'Dal pensiero alla forma',
+
 }
 
 

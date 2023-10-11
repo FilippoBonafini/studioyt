@@ -7,24 +7,26 @@ import AddConferm from "./AddConferm";
 import { motion, AnimatePresence } from "framer-motion";
 import LoadCard from "./LoadCard";
 
-
 export default function Rental() {
     const [data, setData] = useState([]);
     const [conferm, setConferm] = useState(false);
-    const [isLoading, setIsLoading] = useState(true); // Aggiunto stato isLoading
+    const [isLoading, setIsLoading] = useState(true);
+    const [searchInput, setSearchInput] = useState(""); // Aggiunto stato per l'input di ricerca
 
     useEffect(() => {
         async function fetchData() {
             try {
-                const result = await client.fetch(`*[_type == "attrezzatura"]`);
+                // Modificato il filtro in base all'input di ricerca
+                const query = `*[_type == "attrezzatura" && name match "${searchInput}*"]`;
+                const result = await client.fetch(query);
                 setData(result);
-                setIsLoading(false); // Imposta isLoading a false quando i dati sono caricati
+                setIsLoading(false);
             } catch (error) {
                 console.error("Errore durante il recupero dei dati da Sanity:", error);
             }
         }
         fetchData();
-    }, []);
+    }, [searchInput]); // Aggiunto searchInput come dipendenza
 
     const confermPop = () => {
         setConferm(true);
@@ -33,10 +35,25 @@ export default function Rental() {
         }, 3000);
     }
 
+    // Gestore per l'input di ricerca
+    const handleSearchInputChange = (event) => {
+        setSearchInput(event.target.value);
+    };
+
+    // Gestore per l'invio della ricerca
+    const handleSearchSubmit = (event) => {
+        event.preventDefault();
+        fetchData(); // Richiama fetchData() quando l'utente invia la ricerca
+    };
+
     return (
         <>
-            <Searchbar />
-            {isLoading ? ( // Mostra "Loading..." quando isLoading è true
+            <Searchbar
+                value={searchInput}
+                onChange={handleSearchInputChange}
+                onSubmit={handleSearchSubmit} // Aggiunto onSubmit per l'invio della ricerca
+            />
+            {isLoading ? (
                 <div className="grid mt-14 lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1">
                     <LoadCard />
                     <LoadCard />

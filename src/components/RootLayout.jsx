@@ -84,7 +84,7 @@ const NavigationItem = ({ href, children }) => {
   return (
     <Link
       href={href}
-      className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l 
+      className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l  
       hover:text-blue-700 sm:even:border-neutral-800 sm:even:pl-16"
     >
       {children}
@@ -95,7 +95,9 @@ const NavigationItem = ({ href, children }) => {
 
 const Navigation = () => {
   return (
-    <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white ">
+    <nav className="mt-px font-display text-4xl font-medium tracking-tight text-white ">
+
+
       <NavigationRow>
         <NavigationItem href="/portfolio">
           Portfolio
@@ -104,6 +106,17 @@ const Navigation = () => {
           Chi siamo
         </NavigationItem>
       </NavigationRow>
+
+
+      <NavigationRow>
+        <NavigationItem href="/studio">
+          Lo studio
+        </NavigationItem>
+        <NavigationItem href="/rental">
+          Rental
+        </NavigationItem>
+      </NavigationRow>
+
       <NavigationRow>
         <NavigationItem href="/studio">
           Lo studio
@@ -140,7 +153,7 @@ const RootLayoutInner = ({ children }) => {
   }, []);
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
-      <header>
+      <header >
         <div
           className="absolute left-0 right-0 top-2 z-40 pt-14"
           aria-hidden={expanded ? "true" : undefined}
@@ -170,7 +183,7 @@ const RootLayoutInner = ({ children }) => {
           inert={expanded ? undefined : ""}
         >
           <motion.div layout className="bg-neutral-800">
-            <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
+            <div ref={navRef} className="bg-neutral-950 pb-16 pt-14 ">
               <Header
                 invert
                 panelId={panelId}

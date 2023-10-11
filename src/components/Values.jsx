@@ -13,6 +13,7 @@ const Values = () => {
           className="absolute inset-0 h-full w-full fill-neutral-100 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
           yOffset={-270}
         />
+
       </div>
       <SectionIntro
         eyebrow="Contenuti extra"
