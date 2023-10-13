@@ -5,13 +5,29 @@ import Card from "./Card";
 import Searchbar from "./Searchbar";
 import AddConferm from "./AddConferm";
 import { motion, AnimatePresence } from "framer-motion";
-import LoadCard from "./LoadCard";
 
 export default function Rental() {
     const [data, setData] = useState([]);
     const [conferm, setConferm] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [searchInput, setSearchInput] = useState(""); // Aggiunto stato per l'input di ricerca
+
+    // Funzione di confronto personalizzata per ordinare gli elementi
+    function customSort(a, b) {
+        // Ordina in base alla priorità della categoria
+        const categoryPriorityA = a.category.priority;
+        const categoryPriorityB = b.category.priority;
+
+        if (categoryPriorityA !== categoryPriorityB) {
+            return categoryPriorityA - categoryPriorityB;
+        }
+
+        // Se le priorità della categoria sono uguali, ordina per priorità dell'elemento
+        const priorityA = a.priorità;
+        const priorityB = b.priorità;
+
+        return priorityA - priorityB;
+    }
 
     useEffect(() => {
         async function fetchData() {
@@ -53,23 +69,28 @@ export default function Rental() {
                 onChange={handleSearchInputChange}
                 onSubmit={handleSearchSubmit} // Aggiunto onSubmit per l'invio della ricerca
             />
-            {isLoading ? (
-                <div className="grid mt-14 lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1">
-                    <LoadCard />
-                    <LoadCard />
-                    <LoadCard />
-                </div>
-            ) : (
-                <div className="grid mt-14 lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1">
+
+            <div className="grid mt-14 lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1">
+                {data.length === 0 && isLoading === false ? (
+                    <>
+                        <h3 className="mt-2 font-display text-xl font-medium tracking-tight text-neutral-900 sm:text-2xl">
+                            Nessun risultato
+                        </h3>
+                    </>
+
+                ) : <>
                     {data.map((item) => (
                         <Card
                             key={item._id}
                             item={item}
                             confermPop={confermPop}
+                            load={isLoading}
                         />
                     ))}
-                </div>
-            )}
+                </>}
+
+            </div>
+
             {conferm ? (
                 <AnimatePresence>
                     {conferm && (

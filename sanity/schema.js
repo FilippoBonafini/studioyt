@@ -15,18 +15,21 @@ export const schema = {
           name: 'description',
           type: 'text',
           title: 'Descrizione',
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'images',
           type: 'array',
           title: 'Immagini',
           of: [{ type: 'image', options: { hotspot: true } }],
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'price',
           type: 'number',
           title: 'Prezzo',
           validation: (Rule) => Rule.min(0),
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'slug',
@@ -35,18 +38,21 @@ export const schema = {
           options: {
             source: 'name',
             maxLength: 200, // Limita la lunghezza del campo slug
+            validation: (Rule) => Rule.required(),
           },
         },
         {
           name: 'priority',
           title: 'Priorità',
-          type: 'number'
+          type: 'number',
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'categories',
           title: 'Categorie',
           type: 'array',
           of: [{ type: 'reference', to: [{ type: 'category' }] }],
+          validation: (Rule) => Rule.required(),
         },
       ],
     },
@@ -65,6 +71,13 @@ export const schema = {
           name: 'description',
           type: 'text',
           title: 'Descrizione',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'priority',
+          title: 'Priorità',
+          type: 'number',
+          validation: (Rule) => Rule.required(),
         },
       ],
     },
