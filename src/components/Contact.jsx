@@ -1,10 +1,10 @@
 'use client'
 import { useState } from "react";
-import ContactDetails from "@/components/ContactDetails";
-import ContactForm from "@/components/ContactForm";
-import Container from "@/components/Container";
-import PageIntro from "@/components/PageIntro";
-import Button from "@/components/Button";
+import ContactDetails from "../components/ContactDetails";
+import ContactForm from "../components/ContactForm";
+import Container from "../components/Container";
+import PageIntro from "../components/PageIntro";
+import Button from "../components/Button";
 const Contact = () => {
     const [visible, setVisible] = useState(true)
     const handleSubmit = () => {

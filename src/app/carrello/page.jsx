@@ -1,11 +1,11 @@
 'use client'
 import React, { useState, useEffect } from "react";
-import Container from "@/components/Container";
-import Button from "@/components/Button";
+import Container from "../../components/Container";
+import Button from "../../components/Button";
 import Link from "next/link";
-import CartList from "@/components/CartList";
-import FadeIn from "@/components/FadeIn";
-import RentalForm from "@/components/RentalForm";
+import CartList from "../../components/CartList";
+import FadeIn from "../../components/FadeIn";
+import RentalForm from "../../components/RentalForm";
 
 
 const Page = () => {

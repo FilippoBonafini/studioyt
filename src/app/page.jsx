@@ -1,10 +1,10 @@
-import Clients from "@/components/Clients";
-import ContactSection from "@/components/ContactSection";
-import Container from "@/components/Container";
-import FadeIn from "@/components/FadeIn";
-import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
-import logoPhobiaDark from "@/images/clients/phobia/logo-dark.svg";
+import Clients from "../components/Clients";
+import ContactSection from "../components/ContactSection";
+import Container from "../components/Container";
+import FadeIn from "../components/FadeIn";
+import Services from "../components/Services";
+import Testimonials from "../components/Testimonials";
+import logoPhobiaDark from "../images/clients/phobia/logo-dark.svg";
 
 // import videoBg from "public/presentation.mp4"
 

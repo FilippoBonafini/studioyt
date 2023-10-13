@@ -1,4 +1,4 @@
-import PageIntro from "@/components/PageIntro";
+import PageIntro from "../../components/PageIntro";
 import React from "react";
 
 export const metadata = {

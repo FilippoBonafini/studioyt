@@ -1,4 +1,4 @@
-import { SocialMediaProfiles } from "@/components/SocialMedia";
+import { SocialMediaProfiles } from "../components/SocialMedia";
 
 export const navigation = [
   // {

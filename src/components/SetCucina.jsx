@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "./Section";
-import imageLaptop from "@/images/laptop.jpg";
+import imageLaptop from "../images/laptop.jpg";
 import Blockquote from "./Blockquote";
 
 const SetCucina = () => {

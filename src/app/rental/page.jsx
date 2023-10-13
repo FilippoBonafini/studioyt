@@ -1,8 +1,8 @@
-import PageIntro from "@/components/PageIntro";
-import Container from "@/components/Container";
-import Rental from "@/components/Rental";
-import Button from "@/components/Button";
-import FadeIn from "@/components/FadeIn";
+import PageIntro from "../../components/PageIntro";
+import Container from "../../components/Container";
+import Rental from "../../components/Rental";
+import Button from "../../components/Button";
+import FadeIn from "../../components/FadeIn";
 export const metadata = {
   title: 'Tulpa Studio | Rental',
   description: 'Esplora il catalogo delle nostre attrezzature, scopri quale sarebbe la soluzione migliore per te!',

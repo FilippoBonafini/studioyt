@@ -1,10 +1,10 @@
-import SetCucina from "@/components/SetCucina";
-import DietroLeQuinte from "@/components/DietroLeQuinte";
-import MainSet from "@/components/MainSet";
-import PageIntro from "@/components/PageIntro";
-import Values from "@/components/Values";
+import SetCucina from "../../components/SetCucina";
+import DietroLeQuinte from "../../components/DietroLeQuinte";
+import MainSet from "../../components/MainSet";
+import PageIntro from "../../components/PageIntro";
+import Values from "../../components/Values";
 import React from "react";
-import ContactSection from "@/components/ContactSection";
+import ContactSection from "../../components/ContactSection";
 
 export const metadata = {
   title: 'Tulpa Studio | Studio',

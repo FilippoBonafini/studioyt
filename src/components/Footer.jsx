@@ -5,7 +5,7 @@ import FooterNavigation from "./FooterNavigation";
 import Logo from "./Logo";
 import Link from "next/link";
 import Image from "next/image";
-import logoImage from "@/images/logos/logo.svg";
+import logoImage from "../images/logos/logo.svg";
 
 
 const ArrowIcon = (props) => {

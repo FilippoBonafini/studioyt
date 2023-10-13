@@ -13,7 +13,7 @@ import clsx from "clsx";
 import Offices from "./Offices";
 import SocialMedia from "./SocialMedia";
 import Footer from "./Footer";
-import logoImage from "@/images/logos/logo.svg";
+import logoImage from "../images/logos/logo.svg";
 import CartButton from "./CartButton";
 
 
