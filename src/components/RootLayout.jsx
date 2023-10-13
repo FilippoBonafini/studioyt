@@ -117,14 +117,6 @@ const Navigation = () => {
         </NavigationItem>
       </NavigationRow>
 
-      <NavigationRow>
-        <NavigationItem href="/studio">
-          Lo studio
-        </NavigationItem>
-        <NavigationItem href="/rental">
-          Rental
-        </NavigationItem>
-      </NavigationRow>
     </nav>
   );
 };
