@@ -4,7 +4,6 @@ import Container from "../components/Container";
 import FadeIn from "../components/FadeIn";
 import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
-import logoPhobiaDark from "../images/clients/sky.png";
 
 // import videoBg from "public/presentation.mp4"
 
@@ -38,7 +37,6 @@ export default function Home() {
       <Clients />
       <Testimonials
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: "Phobia", logo: logoPhobiaDark }}
       >
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis suscipit eveniet magnam? Amet asperiores excepturi mollitia!
       </Testimonials>
