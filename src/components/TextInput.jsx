@@ -4,7 +4,7 @@ const TextInput = ({ label, ...props }) => {
   const id = useId();
   return (
     <div className="group relative z-0 transition-all focus-within:z-10">
-      <input
+      <input required
         type="text"
         id={id}
         {...props}
