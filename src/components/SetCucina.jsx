@@ -8,21 +8,18 @@ const SetCucina = () => {
     <Section title="Set Cucina" image={{ src: imageLaptop, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto culpa deserunt eos, dolores vel deleniti omnis dolorum dolorem, blanditiis soluta est possimus rem asperiores delectus autem placeat enim quia neque.
+          All’interno del nostro studio è presente un set cucina funzionante attrezzato di elettrodomestici e stoviglie, con griglia sospesa per luci e telecamere zenitali dedicata.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, at neque facere, nobis alias beatae necessitatibus quae officia, placeat molestias ut quam reiciendis. Ab veritatis consectetur labore? Alias, deserunt consectetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ab quaerat explicabo nemo, eos, ut earum aliquam molestiae modi aut ipsum laborum? Eum corrupti aperiam vitae. Tempora nobis consequuntur velit?
+          Il set è studiato per essere completamente personalizzabile in base alle esigenze, dalle luci in grado di simulare diverse ore del giorno o di essere impostate in maniera creativa tramite un tablet, alle pareti e mobili di sfondo scelti in base al tipo di ambiente che si intende ricreare.
         </p>
       </div>
-      <Blockquote
+      {/* <Blockquote
         author={{ name: "Michelangelo", role: "Proprietario" }}
         className="mt-12"
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati illum enim cupiditate molestiae, voluptatem debitis unde omnis exercitationem ipsam ad reiciendis nisi! Sint quaerat quis laboriosam aliquam adipisci nam numquam.
-      </Blockquote>
+      </Blockquote> */}
     </Section>
   );
 };

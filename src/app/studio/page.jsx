@@ -16,7 +16,7 @@ const StudioPage = () => {
     <>
       <PageIntro title="Lo studio">
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias molestiae quidem tempore necessitatibus inventore esse! Inventore temporibus ex corrupti enim doloribus vero dolorem odio illum, accusantium voluptatibus debitis. Vel, provident?
+          Tulpa Studio ha sede in un capannone di 400 mq. in provincia di Ferrara con un’infrastruttura tecnologicamente avanzata e all’avanguardia per la realizzazione di prodotti cinematografici.
         </p>
       </PageIntro>
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">

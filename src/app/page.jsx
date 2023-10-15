@@ -38,7 +38,7 @@ export default function Home() {
       <Testimonials
         className="mt-24 sm:mt-32 lg:mt-40"
       >
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis suscipit eveniet magnam? Amet asperiores excepturi mollitia!
+        Portiamo un’idea dal pensiero alla forma attraverso strumenti audiovisivi all’avanguardia e vaste competenze dettate da reale esperienza sul campo
       </Testimonials>
       <Services />
       <ContactSection />
