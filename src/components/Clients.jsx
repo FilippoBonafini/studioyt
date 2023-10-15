@@ -1,24 +1,24 @@
 import Image from "next/image";
-import logoBrightPath from "../images/clients/bright-path/logo-light.svg";
-import logoFamilyFund from "../images/clients/family-fund/logo-light.svg";
-import logoGreenLife from "../images/clients/green-life/logo-light.svg";
-import logoHomeWork from "../images/clients/home-work/logo-light.svg";
-import logoMailSmirk from "../images/clients/mail-smirk/logo-light.svg";
-import logoNorthAdventures from "../images/clients/north-adventures/logo-light.svg";
-import logoPhobiaLight from "../images/clients/phobia/logo-light.svg";
-import logoUnseal from "../images/clients/unseal/logo-light.svg";
+import amen from "../images/clients/amen.png"
+import arredo3 from "../images/clients/arredo3.png"
+import costa from "../images/clients/costa.png"
+import ferrari from "../images/clients/ferrari.png"
+import iginio from "../images/clients/iginio.png"
+import parma from "../images/clients/parma.png"
+import philips from "../images/clients/philips.png"
+import sky from "../images/clients/sky.png"
 import Container from "./Container";
 import FadeIn, { FadeInStagger } from "./FadeIn";
 
 const clients = [
-  ["Phobia", logoPhobiaLight],
-  ["Family Fund", logoFamilyFund],
-  ["Unseal", logoUnseal],
-  ["Mail Smirk", logoMailSmirk],
-  ["Home Work", logoHomeWork],
-  ["Green Life", logoGreenLife],
-  ["Bright Path", logoBrightPath],
-  ["North Adventures", logoNorthAdventures],
+  ["Philips", philips],
+  ["Costa Crociere", costa],
+  ["Ferrari Trento", ferrari],
+  ["Iginio Massari", iginio],
+  ["Amen", amen],
+  ["Prosciutto di Parma", parma],
+  ["Arredo 3", arredo3],
+  ["Sky Sport", sky],
 ];
 
 const Clients = () => {
