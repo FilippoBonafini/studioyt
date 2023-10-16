@@ -22,7 +22,8 @@ export default function Page() {
     const pathName = usePathname();
     const slug = pathName.split("/")[2];
     const [data, setData] = useState(null);
-    const [load, setLoad] = useState(true)
+    const [load, setLoad] = useState(true);
+    const [conferm, setConferm] = useState()
 
     useEffect(() => {
         async function fetchData() {
@@ -39,15 +40,20 @@ export default function Page() {
         }
         fetchData();
     }, [slug]); // Aggiungi slug come dipendenza per caricare dati quando cambia
-
+    const conferma = () => {
+        setConferm(true);
+        setTimeout(() => {
+            setConferm(false);
+        }, 3000);
+    }
     return (
         <Container className="mt-16 text-black">
             <FadeIn>
-                <div className=" grid md:grid-cols-2 sm:grid-cols-1 gap-20 mt-20 sm:mt-10">
-                    <div>
+                <div className=" grid md:grid-cols-2 sm:grid-cols-1 ">
+                    <div className="flex justify-center">
                         {load ? (<>carico</>) : (<>
                             <img
-                                className="pb-5"
+                                className="rounded shadow-md"
                                 src={urlFor(data.images[0]).width(420).height(360).url()}
                                 alt={data.slug.current}
                             />
@@ -63,7 +69,7 @@ export default function Page() {
                                     <p>{data.description}</p>
                                 </SectionIntro>
                                 <div className=" flex justify-end mt-4">
-                                    <AddCart item={data} />
+                                    <AddCart item={data} confermPop={conferma} />
                                 </div>
 
                             </div>
