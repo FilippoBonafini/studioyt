@@ -70,7 +70,7 @@ export default function Rental() {
                 onSubmit={handleSearchSubmit} // Aggiunto onSubmit per l'invio della ricerca
             />
 
-            <div className="grid mt-14 lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1">
+            <div className="grid mt-14 lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1 items-center justify-center">
                 {data.length === 0 && isLoading === false ? (
                     <>
                         <h3 className="mt-2 font-display text-xl font-medium tracking-tight text-neutral-900 sm:text-2xl">

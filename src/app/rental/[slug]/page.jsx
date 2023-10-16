@@ -6,7 +6,9 @@ import FadeIn from "../../../components/FadeIn";
 import { useEffect, useState } from "react";
 import SectionIntro from "../../../components/SectionIntro";
 import AddCart from "../../../components/AddCart";
-import imageUrlBuilder from '@sanity/image-url'
+import imageUrlBuilder from '@sanity/image-url';
+import AddConferm from "../../../components/AddConferm";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Get a pre-configured url-builder from your sanity client
 const builder = imageUrlBuilder(client)
@@ -23,7 +25,8 @@ export default function Page() {
     const slug = pathName.split("/")[2];
     const [data, setData] = useState(null);
     const [load, setLoad] = useState(true);
-    const [conferm, setConferm] = useState()
+    const [conferm, setConferm] = useState(false)
+
 
     useEffect(() => {
         async function fetchData() {
@@ -77,6 +80,24 @@ export default function Page() {
                     </div>
                 </div>
             </FadeIn>
+            {conferm ? (
+                <AnimatePresence>
+                    {conferm && (
+                        <div className="flex fixed bottom-0 right-0">
+                            <motion.div
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <AddConferm />
+                            </motion.div>
+                        </div>
+                    )}
+                </AnimatePresence>
+            ) : (
+                <></>
+            )}
         </Container>
     );
 }

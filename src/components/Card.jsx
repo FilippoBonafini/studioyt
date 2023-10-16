@@ -23,15 +23,16 @@ const Card = ({ item, confermPop, load }) => {
 
     return (
         <FadeIn>
-            <div className="bg-white text-black shadow-md relative transition-transform transform hover:scale-105 hover:shadow-2xl">
+            <div className="inline-block text-black shadow-md relative transition-transform transform hover:scale-105 hover:shadow-2xl">
                 {load ? (
                     <h1>load</h1>
                 ) : (<>
-                    <Link href={'/rental/' + item.slug.current}><img
-                        className="pb-5"
-                        src={urlFor(item.images[0]).width(400).height(350).url()}
-                        alt={item.slug.current}
-                    />
+                    <Link href={'/rental/' + item.slug.current}>
+                        <img
+                            className="rounded"
+                            src={urlFor(item.images[0]).width(400).height(350).fit('fill').url()}
+                            alt={item.slug.current}
+                        />
                     </Link>
 
                     <div className="absolute bottom-4 left-4 bg-blue-700 bg-transaparent p-1 rounded-full">

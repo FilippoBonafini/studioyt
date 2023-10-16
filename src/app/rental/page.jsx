@@ -14,7 +14,7 @@ const RentalPage = () => {
       <FadeIn>
         <PageIntro title={"Rental"} />
         <div className="py-6 bg-gray-50">
-          <Container>
+          <Container >
             <Rental />
           </Container >
         </div>
