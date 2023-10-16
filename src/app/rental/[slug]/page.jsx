@@ -77,7 +77,7 @@ export default function Page() {
                                     <p>{data.description}</p>
 
                                     <div className=" mt-10">
-                                        <AddCart item={data} confermPop={conferma} className={'hover:bg-blue-700'}>
+                                        <AddCart item={data} confermPop={conferma} className={'hover:bg-blue-700 text-xl'}>
                                             <div className="flex justify-center items-center gap-2">
                                                 <span>
                                                     Aggiungi al carrello
