@@ -28,7 +28,8 @@ export default function RentalForm({ onEmptyCart }) {
             email: event.target.email.value,
             telefono: event.target.telefono.value,
             messaggio: event.target.messaggio.value,
-            carrello: itemsFromLocalStorage
+            carrello: itemsFromLocalStorage,
+            data: event.target.data.value
         }
 
         const response = await fetch("/api/rental", {
@@ -90,6 +91,12 @@ export default function RentalForm({ onEmptyCart }) {
                     />
                     <TextInput label="Telefono" type="tel" name="telefono" autoComplete="tel" />
                     <TextInput label="Messaggio" name="messaggio" />
+                    <TextInput
+                        label="Data"
+                        name="data"
+                        autoComplete="data"
+                        type="date"
+                    />
                 </div>
                 <Button disabled={activeForm ? false : true} type="submit" className="mt-10">
                     Richiedi preventivo

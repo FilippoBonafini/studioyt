@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer")
 
 export default async function contact(req, res) {
 
-    const { nome, email, compagnia, telefono, messaggio } = req.body
+    const { nome, email, compagnia, telefono, messaggio, data } = req.body
 
     const html = `
              <p>Nome: ${nome}</p>
@@ -12,6 +12,7 @@ export default async function contact(req, res) {
              <p>Messaggio: ${messaggio}</p>
              <p>Compagnia: ${compagnia}</p>
              <p>Telefono: ${telefono}</p>
+             <p>Data: ${data}</p>
             `;
 
     let transporter = nodemailer.createTransport({

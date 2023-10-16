@@ -27,7 +27,7 @@ export default function ContactForm({ handleSubmitProp }) {
       email: event.target.email.value,
       compagnia: event.target.compagnia.value,
       telefono: event.target.telefono.value,
-      messaggio: event.target.messaggio.value,
+      messaggio: event.target.messaggio.value
     }
 
     const response = await fetch("/api/contact", {

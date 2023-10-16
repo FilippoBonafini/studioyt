@@ -2,13 +2,14 @@ const nodemailer = require("nodemailer")
 
 export default async function rental(req, res) {
 
-    const { nome, email, telefono, messaggio, carrello } = req.body
+    const { nome, email, telefono, messaggio, carrello, data } = req.body
 
     const html = `
     <p>Nome: ${nome}</p>
     <p>Email: ${email}</p>
     <p>Telefono: ${telefono}</p>
     <p>Messaggio: ${messaggio}</p>
+    <p>Data: ${data}</p>
     <p>Carrello:</p>
     <ul>
         ${carrello.map(item => `
