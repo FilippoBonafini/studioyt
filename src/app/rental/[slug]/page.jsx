@@ -49,7 +49,7 @@ export default function Page() {
     return (
         <Container className="mt-16 text-black">
             <FadeIn>
-                <div className=" grid md:grid-cols-2 sm:grid-cols-1 ">
+                <div className=" grid md:grid-cols-2 sm:grid-cols-1 gap-10 ">
                     <div className="flex justify-center">
                         {load ? (<>carico</>) : (<>
                             <img
