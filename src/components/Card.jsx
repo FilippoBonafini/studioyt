@@ -1,6 +1,20 @@
 'use client'
 import FadeIn from "./FadeIn";
 import AddCart from "./AddCart";
+import Link from "next/link";
+import { client } from "../../sanity/lib/client";
+import imageUrlBuilder from '@sanity/image-url'
+
+
+// Get a pre-configured url-builder from your sanity client
+const builder = imageUrlBuilder(client)
+
+// Then we like to make a simple function like this that gives the
+// builder an image and returns the builder for you to specify additional
+// parameters:
+function urlFor(source) {
+    return builder.image(source)
+}
 
 const Card = ({ item, confermPop, load }) => {
     const conferma = () => {
@@ -13,14 +27,16 @@ const Card = ({ item, confermPop, load }) => {
                 {load ? (
                     <h1>load</h1>
                 ) : (<>
-                    <img
+                    <Link href={'/rental/' + item.slug.current}><img
                         className="pb-5"
-                        src="https://i.pinimg.com/originals/33/14/03/3314031914056608500c925e0dbd3cf8.jpg"
-                        alt="cinepresa"
+                        src={urlFor(item.images[0]).width(400).height(350).url()}
+                        alt={item.slug.current}
                     />
+                    </Link>
+
                     <div className="absolute bottom-4 left-4 bg-blue-700 bg-transaparent p-1 rounded-full">
                         <div className="rounded-full text-white pl-4 flex items-center gap-4">
-                            <span className="text-white font-medium">{item.name}</span>
+                            <Link href={'/rental/' + item.slug.current} className="text-white font-medium">{item.name}</Link>
                             <AddCart item={item} confermPop={conferma} />
                         </div>
                     </div></>
