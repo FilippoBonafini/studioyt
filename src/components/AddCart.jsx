@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Button from "./Button";
 
-const AddCart = ({ item, confermPop }) => {
+const AddCart = ({ item, className, confermPop, children }) => {
     const addToLocalStorage = () => {
         // Ottieni l'array corrente dal localStorage o inizializza un array vuoto
         const currentItems = JSON.parse(localStorage.getItem("items")) || [];
@@ -23,8 +23,8 @@ const AddCart = ({ item, confermPop }) => {
     };
 
     return (
-        <Button className="rounded-full hover:bg-white hover:text-black" onClick={addToLocalStorage}>
-            {item.price}€
+        <Button className={`rounded-full  ${className}`} onClick={addToLocalStorage}>
+            {children}
         </Button>
     );
 };

@@ -9,6 +9,8 @@ import AddCart from "../../../components/AddCart";
 import imageUrlBuilder from '@sanity/image-url';
 import AddConferm from "../../../components/AddConferm";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link"
+import { BsCart } from "react-icons/bs";
 
 // Get a pre-configured url-builder from your sanity client
 const builder = imageUrlBuilder(client)
@@ -52,6 +54,10 @@ export default function Page() {
     return (
         <Container className="mt-16 text-black">
             <FadeIn>
+                <div className="mb-3">
+                    <Link href={'/rental'}>Indietro</Link>
+                </div>
+
                 <div className=" grid md:grid-cols-2 sm:grid-cols-1 gap-10 ">
                     <div className="flex justify-center">
                         {load ? (<>carico</>) : (<>
@@ -72,7 +78,15 @@ export default function Page() {
                                     <p>{data.description}</p>
                                 </SectionIntro>
                                 <div className=" flex justify-end mt-4">
-                                    <AddCart item={data} confermPop={conferma} />
+                                    <AddCart item={data} confermPop={conferma} className={'hover:bg-blue-700'}>
+                                        <div className="flex justify-center items-center gap-2">
+                                            <span>
+                                                Aggiungi al carrello
+                                            </span>
+                                            <BsCart />
+                                        </div>
+
+                                    </AddCart>
                                 </div>
 
                             </div>

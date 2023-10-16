@@ -38,7 +38,7 @@ const Card = ({ item, confermPop, load }) => {
                     <div className="absolute bottom-4 left-4 bg-blue-700 bg-transaparent p-1 rounded-full">
                         <div className="rounded-full text-white pl-4 flex items-center gap-4">
                             <Link href={'/rental/' + item.slug.current} className="text-white font-medium">{item.name}</Link>
-                            <AddCart item={item} confermPop={conferma} />
+                            <AddCart item={item} className={'hover:bg-white hover:text-black'} confermPop={conferma}>{item.price} $</AddCart>
                         </div>
                     </div></>
                 )}
