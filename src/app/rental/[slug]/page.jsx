@@ -54,9 +54,9 @@ export default function Page() {
     return (
         <Container className="mt-16 text-black">
             <FadeIn>
-                <div className="mb-3">
+                {/* <div className="mb-3">
                     <Link href={'/rental'}>Indietro</Link>
-                </div>
+                </div> */}
 
                 <div className=" grid md:grid-cols-2 sm:grid-cols-1 gap-10 ">
                     <div className="flex justify-center">
@@ -73,21 +73,23 @@ export default function Page() {
                             <div>
                                 <SectionIntro
                                     title={data.name}
-                                    className=""
                                 >
                                     <p>{data.description}</p>
-                                </SectionIntro>
-                                <div className=" flex justify-end mt-4">
-                                    <AddCart item={data} confermPop={conferma} className={'hover:bg-blue-700'}>
-                                        <div className="flex justify-center items-center gap-2">
-                                            <span>
-                                                Aggiungi al carrello
-                                            </span>
-                                            <BsCart />
-                                        </div>
 
-                                    </AddCart>
-                                </div>
+                                    <div className=" mt-10">
+                                        <AddCart item={data} confermPop={conferma} className={'hover:bg-blue-700'}>
+                                            <div className="flex justify-center items-center gap-2">
+                                                <span>
+                                                    Aggiungi al carrello
+                                                </span>
+                                                <BsCart />
+                                            </div>
+
+                                        </AddCart>
+                                    </div>
+
+                                </SectionIntro>
+
 
                             </div>
                         ) : null}
