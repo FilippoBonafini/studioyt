@@ -14,7 +14,7 @@ const PortfolioPage = () => {
         title="Portfolio"
       >
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum atque animi eos recusandae explicabo laboriosam. Quo saepe quia ex vero odio, quasi illo possimus explicabo consequuntur molestiae cum, aspernatur corporis?
+          Coming soon..
         </p>
       </PageIntro>
     </>
