@@ -9,7 +9,6 @@ import AddCart from "../../../components/AddCart";
 import imageUrlBuilder from '@sanity/image-url';
 import AddConferm from "../../../components/AddConferm";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link"
 import { BsCart } from "react-icons/bs";
 
 // Get a pre-configured url-builder from your sanity client
@@ -46,10 +45,13 @@ export default function Page() {
         fetchData();
     }, [slug]); // Aggiungi slug come dipendenza per caricare dati quando cambia
     const conferma = () => {
-        setConferm(true);
+        if (conferm) {
+            setConferm(false)
+        }
+        setConferm(true)
         setTimeout(() => {
             setConferm(false);
-        }, 3000);
+        }, 6000);
     }
     return (
         <Container className="mt-16 text-black">
@@ -106,7 +108,7 @@ export default function Page() {
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <AddConferm />
+                                <AddConferm item={data} />
                             </motion.div>
                         </div>
                     )}

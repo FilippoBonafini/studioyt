@@ -1,16 +1,17 @@
-'use client'
-import React, { useEffect, useState } from "react";
-import { client } from "../../sanity/lib/client";
-import Card from "./Card";
-import Searchbar from "./Searchbar";
-import AddConferm from "./AddConferm";
-import { motion, AnimatePresence } from "framer-motion";
+'use client';
+import React, { useEffect, useState } from 'react';
+import { client } from '../../sanity/lib/client';
+import Card from './Card';
+import Searchbar from './Searchbar';
+import AddConferm from './AddConferm';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Rental() {
     const [data, setData] = useState([]);
     const [conferm, setConferm] = useState(false);
+    const [element, setElement] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [searchInput, setSearchInput] = useState(""); // Aggiunto stato per l'input di ricerca
+    const [searchInput, setSearchInput] = useState('');
 
     // Funzione di confronto personalizzata per ordinare gli elementi
     function customSort(a, b) {
@@ -38,18 +39,19 @@ export default function Rental() {
                 setData(result);
                 setIsLoading(false);
             } catch (error) {
-                console.error("Errore durante il recupero dei dati da Sanity:", error);
+                console.error('Errore durante il recupero dei dati da Sanity:', error);
             }
         }
         fetchData();
-    }, [searchInput]); // Aggiunto searchInput come dipendenza
+    }, [searchInput]);
 
-    const confermPop = () => {
+    const confermPop = (item) => {
+        setElement(item);
         setConferm(true);
         setTimeout(() => {
             setConferm(false);
         }, 3000);
-    }
+    };
 
     // Gestore per l'input di ricerca
     const handleSearchInputChange = (event) => {
@@ -59,7 +61,7 @@ export default function Rental() {
     // Gestore per l'invio della ricerca
     const handleSearchSubmit = (event) => {
         event.preventDefault();
-        fetchData(); // Richiama fetchData() quando l'utente invia la ricerca
+        fetchData();
     };
 
     return (
@@ -67,48 +69,43 @@ export default function Rental() {
             <Searchbar
                 value={searchInput}
                 onChange={handleSearchInputChange}
-                onSubmit={handleSearchSubmit} // Aggiunto onSubmit per l'invio della ricerca
+                onSubmit={handleSearchSubmit}
             />
 
             <div className="grid mt-14 lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1 items-center justify-center">
                 {data.length === 0 && isLoading === false ? (
-                    <>
-                        <h3 className="mt-2 font-display text-xl font-medium tracking-tight text-neutral-900 sm:text-2xl">
-                            Nessun risultato
-                        </h3>
-                    </>
-
-                ) : <>
-                    {data.map((item) => (
+                    <h3 className="mt-2 font-display text-xl font-medium tracking-tight text-neutral-900 sm:text-2xl">
+                        Nessun risultato
+                    </h3>
+                ) : (
+                    data.map((item, index) => (
                         <Card
-                            key={item._id}
+                            key={index}
                             item={item}
-                            confermPop={confermPop}
+                            confermPop={() => confermPop(item)}
                             load={isLoading}
                         />
-                    ))}
-                </>}
-
+                    ))
+                )}
+                {conferm ? (
+                    <AnimatePresence>
+                        {conferm && (
+                            <div className="flex fixed bottom-0 right-0">
+                                <motion.div
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <AddConferm item={element} />
+                                </motion.div>
+                            </div>
+                        )}
+                    </AnimatePresence>
+                ) : (
+                    <></>
+                )}
             </div>
-
-            {conferm ? (
-                <AnimatePresence>
-                    {conferm && (
-                        <div className="flex fixed bottom-0 right-0">
-                            <motion.div
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                <AddConferm />
-                            </motion.div>
-                        </div>
-                    )}
-                </AnimatePresence>
-            ) : (
-                <></>
-            )}
         </>
     );
 }
