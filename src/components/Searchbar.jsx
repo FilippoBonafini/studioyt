@@ -1,9 +1,9 @@
 'use clients'
 
-const Searchbar = ({ value, onChange, onSubmit }) => {
+const Searchbar = ({ value, onChange, Submit }) => {
     return (
         <div className="md:max-w-lg">
-            <form onSubmit={onSubmit}> {/* Aggiunto un form per gestire l'invio */}
+            <form onSubmit={Submit}> {/* Aggiunto un form per gestire l'invio */}
                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                     <input
                         type="search"

@@ -27,7 +27,7 @@ const Card = ({ item, confermPop, load }) => {
                 {load ? (
                     <h1>load</h1>
                 ) : (<>
-                    <Link href={'/rental/' + item.slug.current}>
+                    <Link scroll={true} href={'/rental/' + item.slug.current}>
                         <img
                             className="rounded"
                             src={urlFor(item.images[0]).width(400).height(350).fit('fill').url()}
