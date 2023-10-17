@@ -54,7 +54,7 @@ export default function Page() {
         }, 6000);
     }
     return (
-        <Container className="mt-16 text-black">
+        <div className="mt-16 text-black">
             <FadeIn>
                 {/* <div className="mb-3">
                     <Link href={'/rental'}>Indietro</Link>
@@ -116,6 +116,6 @@ export default function Page() {
             ) : (
                 <></>
             )}
-        </Container>
+        </div>
     );
 }
