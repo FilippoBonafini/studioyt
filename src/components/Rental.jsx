@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import React, { useEffect, useState } from 'react';
 import { client } from '../../sanity/lib/client';
 import Card from './Card';
@@ -15,7 +15,6 @@ export default function Rental() {
 
     // Funzione di confronto personalizzata per ordinare gli elementi
     function customSort(a, b) {
-        // Ordina in base alla priorità della categoria
         const categoryPriorityA = a.category.priority;
         const categoryPriorityB = b.category.priority;
 
@@ -23,9 +22,8 @@ export default function Rental() {
             return categoryPriorityA - categoryPriorityB;
         }
 
-        // Se le priorità della categoria sono uguali, ordina per priorità dell'elemento
-        const priorityA = a.priorità;
-        const priorityB = b.priorità;
+        const priorityA = a.priority;
+        const priorityB = b.priority;
 
         return priorityA - priorityB;
     }
@@ -33,11 +31,22 @@ export default function Rental() {
     useEffect(() => {
         async function fetchData() {
             try {
-                // Modificato il filtro in base all'input di ricerca
-                const query = `*[_type == "attrezzatura" && name match "${searchInput}*"]`;
+                const query = `*[_type == "attrezzatura" && name match "${searchInput}*"] {
+                name,
+                price,
+                priority,
+                images,
+                "categories": categories->{
+                    priority,
+                    name
+                },
+                slug
+            } | order(category.priority asc, priority asc)`;
+
                 const result = await client.fetch(query);
                 setData(result);
                 setIsLoading(false);
+                console.log(result)
             } catch (error) {
                 console.error('Errore durante il recupero dei dati da Sanity:', error);
             }

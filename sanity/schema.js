@@ -28,8 +28,10 @@ export const schema = {
           name: 'price',
           type: 'number',
           title: 'Prezzo',
-          validation: (Rule) => Rule.min(0),
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) => [
+            Rule.min(0),
+            Rule.required(),
+          ],
         },
         {
           name: 'slug',
