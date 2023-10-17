@@ -1,7 +1,5 @@
 const nodemailer = require("nodemailer")
 
-
-
 export default async function contact(req, res) {
 
     const { nome, email, compagnia, telefono, messaggio, data } = req.body
