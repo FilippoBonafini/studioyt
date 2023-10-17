@@ -64,7 +64,7 @@ export default function Page() {
 
                 <div className=" grid md:grid-cols-2 sm:grid-cols-1 gap-10 ">
 
-                    <div className="flex justify-center">
+                    <div className="flex justify-center m-1">
                         {load ? (<>carico</>) : (<>
                             <img
                                 className="rounded shadow-md"
