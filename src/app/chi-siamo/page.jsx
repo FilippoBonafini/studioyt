@@ -22,28 +22,32 @@ const AboutPage = () => {
     </video> */}
       <PageIntro eyebrow="Chi siamo" title="Dal pensiero alla forma">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum similique mollitia quisquam molestiae eos ullam, exercitationem iure tenetur ut! Quas porro nulla dolores. Magnam eligendi fugit, voluptatum cupiditate esse amet.
+          Tulpa Studio è fondata da Michelangelo Ingrosso, operatore di ripresa e direttore della fotografia con molti anni di esperienza nel settore commerciale.
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique maxime, sint eaque nobis porro atque temporibus at cumque ab rem! Suscipit animi maiores libero sapiente, saepe quibusdam facere nulla doloribus!
+            La casa di produzione si avvale di una vasta rete di professionisti dell’audiovisivo come produttori, sceneggiatori, operatori di ripresa, montatori, colorist, direttori della fotografia e registi.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto veritatis exercitationem reiciendis molestias, aliquid quaerat recusandae molestiae deserunt est, aperiam porro nostrum obcaecati consectetur nobis. A ratione architecto doloremque neque!
+            Ogni progetto è analizzato è valutato con la massima attenzione per consentire la costruzione di un team dedicato all’esecuzione del lavoro dalla pre-produzione alle riprese e montaggio del prodotto.
           </p>
         </div>
+        <p className="mt-4">
+          In poche parole, amiamo raccontare incredibili storie.
+
+        </p>
       </PageIntro>
 
 
 
-      <Container className="mt-20">
+      {/* <Container className="mt-20">
         <StatList>
           <StatListItem value="35" label="Macchine professionali" />
           <StatListItem value="140m²" label="Superficie stage" />
           <StatListItem value="20" label="luci" />
         </StatList>
       </Container>
-      <Cultures />
+      <Cultures /> */}
       <ContactSection />
     </>
   );

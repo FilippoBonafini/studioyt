@@ -2,8 +2,7 @@ import React from "react";
 import GridPattern from "./GridPattern";
 import Button from "./Button";
 import SectionIntro from "./SectionIntro";
-import Container from "./Container";
-import { GridList, GridListItem } from "./GridList";
+import { BsArrowDownCircle } from "react-icons/bs";
 
 const Values = () => {
   return (
@@ -19,12 +18,8 @@ const Values = () => {
         eyebrow="Contenuti extra"
         title="Scarica ora la planimetria"
       >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ut blanditiis cupiditate laudantium omnis porro incidunt fugiat fugit, reiciendis deleniti aspernatur ipsum eligendi quod repudiandae nobis amet esse quae doloribus.
-        </p>
-
         <a href="/planimetria.pdf" target="_blank" download>
-          <Button className={'mt-5 text-xl'}>Scarica</Button>
+          <Button className={'mt-5 flex justify-center items-center text-xl w-[80px] h-[80px]'}><BsArrowDownCircle size={50} /></Button>
         </a>
       </SectionIntro>
     </div>

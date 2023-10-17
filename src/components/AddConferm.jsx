@@ -25,7 +25,6 @@ const AddConferm = ({ item }) => {
                         Checkout
                     </Button>
                 </div>
-
             </Link>
         </>
     )
