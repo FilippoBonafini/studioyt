@@ -77,7 +77,10 @@ const CartList = () => {
                                 className="my-3 flex justify-between border-blue-900 border-2 p-3 items-center rounded-md"
                             >
                                 <div className="flex flex-col">
-                                    <span>{item.name}</span>
+                                    <Link prefetch={true} href={`/rental/${item.slug.current}`}>
+                                        <span>{item.name}</span>
+                                    </Link>
+
                                     <span>{item.price}€</span>
                                 </div>
                                 <div>

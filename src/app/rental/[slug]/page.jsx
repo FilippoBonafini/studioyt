@@ -10,6 +10,8 @@ import imageUrlBuilder from '@sanity/image-url';
 import AddConferm from "../../../components/AddConferm";
 import { motion, AnimatePresence } from "framer-motion";
 import { BsCart } from "react-icons/bs";
+import Link from "next/link";
+import Button from "../../../components/Button";
 
 // Get a pre-configured url-builder from your sanity client
 const builder = imageUrlBuilder(client)
@@ -61,6 +63,7 @@ export default function Page() {
                 </div> */}
 
                 <div className=" grid md:grid-cols-2 sm:grid-cols-1 gap-10 ">
+
                     <div className="flex justify-center">
                         {load ? (<>carico</>) : (<>
                             <img
