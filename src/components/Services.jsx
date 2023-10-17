@@ -11,7 +11,7 @@ const Services = () => {
   return (
     <>
 
-      <Container className="mt-16">
+      <div className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
             <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
@@ -25,7 +25,7 @@ const Services = () => {
           <SectionIntro
             eyebrow="Cosa offriamo"
             title="Aiutiamo a creare contenuti di qualità"
-            className=""
+            className="mt-10"
           >
             <p className="mb-2">
               Tulpa Studio è una casa di produzione cinematografica ed audiovisiva con sede in provincia di Ferrara all’interno di un capannone di 400 mq. con sala posa, servizio di noleggio attrezzature, editing & color grading suite.
@@ -48,7 +48,7 @@ const Services = () => {
             </ListItem>
           </List> */}
         </div>
-      </Container>
+      </div>
     </>
   );
 };
