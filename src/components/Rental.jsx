@@ -13,40 +13,39 @@ export default function Rental() {
     const [isLoading, setIsLoading] = useState(true);
     const [searchInput, setSearchInput] = useState('');
 
-    // Funzione di confronto personalizzata per ordinare gli elementi
-    function customSort(a, b) {
-        const categoryPriorityA = a.category.priority;
-        const categoryPriorityB = b.category.priority;
-
-        if (categoryPriorityA !== categoryPriorityB) {
-            return categoryPriorityA - categoryPriorityB;
-        }
-
-        const priorityA = a.priority;
-        const priorityB = b.priority;
-
-        return priorityA - priorityB;
-    }
-
     useEffect(() => {
         async function fetchData() {
             try {
                 const query = `*[_type == "attrezzatura" && name match "${searchInput}*"] {
-                name,
-                price,
-                priority,
-                images,
-                "categories": categories->{
+                    name,
+                    price,
                     priority,
-                    name
-                },
-                slug
-            } | order(category.priority asc, priority asc)`;
+                    images,
+                    "categories": categories[]->{
+                        priority,
+                        name
+                    },
+                    slug
+                }`;
 
                 const result = await client.fetch(query);
+                // Ordina i risultati in base alla priorità della categoria e della priorità dell'elemento
+                result.sort((a, b) => {
+                    const categoryPriorityA = a.categories[0].priority;
+                    const categoryPriorityB = b.categories[0].priority;
+
+                    if (categoryPriorityA !== categoryPriorityB) {
+                        return categoryPriorityA - categoryPriorityB;
+                    }
+
+                    const priorityA = a.priority;
+                    const priorityB = b.priority;
+
+                    return priorityA - priorityB;
+                });
+
                 setData(result);
                 setIsLoading(false);
-                console.log(result)
             } catch (error) {
                 console.error('Errore durante il recupero dei dati da Sanity:', error);
             }
