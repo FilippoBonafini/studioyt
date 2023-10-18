@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from "react";
 import CartListButtons from "./CartListButtons";
 import Link from "next/link";
+import imageUrlBuilder from '@sanity/image-url';
+import { client } from '../../sanity/lib/client';
+import Image from 'next/image';
+// Get a pre-configured url-builder from your sanity client
+const builder = imageUrlBuilder(client)
+
+// Then we like to make a simple function like this that gives the
+// builder an image and returns the builder for you to specify additional
+// parameters:
+function urlFor(source) {
+    return builder.image(source)
+}
+
 
 const CartList = () => {
     const [currentItems, setCurrentItems] = useState([]);
@@ -76,12 +89,21 @@ const CartList = () => {
                                 key={index}
                                 className="my-3 flex justify-between border-blue-900 border-2 p-3 items-center rounded-md"
                             >
-                                <div className="flex flex-col">
+
+                                <div className="flex items-center gap-4">
                                     <Link prefetch={true} href={`/rental/${item.slug.current}`}>
-                                        <span>{item.name}</span>
+                                        <Image className="rounded hidden  lg:block" quality={100} loading='eager' width={80} height={80} src={urlFor(item.images[0]).width(80).height(80).url()} />
                                     </Link>
 
-                                    <span>{item.price}€</span>
+                                    <div className="flex flex-col">
+                                        <Link prefetch={true} href={`/rental/${item.slug.current}`}>
+
+                                            <span>{item.name}</span>
+                                        </Link>
+
+                                        <span>{item.price}€</span>
+                                    </div>
+
                                 </div>
                                 <div>
                                     <div>Quantità: {item.quantity}</div>

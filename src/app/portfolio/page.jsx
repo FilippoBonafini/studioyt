@@ -14,7 +14,6 @@ const PortfolioPage = () => {
         eyebrow="I nostri lavori"
         title="Portfolio"
       >
-        <p>Ecco alcuni dei nostri lavori..</p>
       </PageIntro>
 
       <Container className='mt-10'>
