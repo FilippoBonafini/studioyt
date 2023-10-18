@@ -1,5 +1,6 @@
 import PageIntro from "../../components/PageIntro";
-import React from "react";
+import Container from "../../components/Container";
+import PortfolioGrid from "../../components/PortfolioGrid";
 
 export const metadata = {
   title: 'Tulpa Studio | Portfolio',
@@ -13,10 +14,13 @@ const PortfolioPage = () => {
         eyebrow="I nostri lavori"
         title="Portfolio"
       >
-        <p>
-          Coming soon..
-        </p>
+        <p>Ecco alcuni dei nostri lavori..</p>
       </PageIntro>
+
+      <Container className='mt-10'>
+        <PortfolioGrid />
+      </Container>
+
     </>
   );
 };
