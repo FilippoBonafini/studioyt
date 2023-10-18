@@ -2,29 +2,26 @@ import Link from "next/link";
 import clsx from "clsx";
 import {
   BsFacebook,
-  BsTwitter,
-  BsGithub,
-  BsYoutube,
-  BsLinkedin,
+  BsInstagram,
+  BsVimeo
 } from "react-icons/bs";
 
 export const SocialMediaProfiles = [
   {
-    title: "Youtube",
-    href: "https://www.youtube.com/",
-    icon: BsYoutube,
+    title: "Instagram",
+    href: "https://instagram.com/tulpastudio?igshid=OGQ5ZDc2ODk2ZA==",
+    icon: BsInstagram,
+  },
+  {
+    title: "Vimeo",
+    href: "https://vimeo.com/michelangeloingrosso",
+    icon: BsVimeo,
   },
   {
     title: "Facebook",
-    href: "https://www.facebook.com/",
+    href: "https://www.facebook.com/tulpastudio",
     icon: BsFacebook,
-  },
-  {
-    title: "Instagram",
-    href: "https://www.linkedin.com/",
-    icon: BsLinkedin,
-  },
-  { title: "Twitter", href: "https://twitter.com", icon: BsTwitter },
+  }
 ];
 
 const SocialMedia = ({ className, invert = false }) => {
@@ -40,6 +37,7 @@ const SocialMedia = ({ className, invert = false }) => {
       {SocialMediaProfiles.map((item) => (
         <li key={item.title}>
           <Link
+            target="_blank"
             href={item.href}
             aria-label={item.title}
             className={clsx(

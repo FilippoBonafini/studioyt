@@ -16,6 +16,7 @@ const FooterNavigation = () => {
                 <li key={link.title} className="mt-4">
                   <Link
                     href={link.href}
+                    target="_blank"
                     className="transition hover:text-neutral-950"
                   >
                     {link.title}
