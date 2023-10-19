@@ -10,7 +10,7 @@ const PortfolioCard = ({ className, ...restProps }) => {
 
                 <h2 className="text-2xl">Progetto di prova asdasda </h2>
             </div>
-            <div className=" absolute top-0 right-6 bottom-0 bg-blue-700 text-white  w-[140px] group-hover:right-[-110px] group-hover:skew-x-0 transition-all duration-300 ease-in-out skew-x-12"></div>
+            <div className=" absolute top-0 right-6 bottom-0 bg-blue-700 text-white  w-[150px] group-hover:right-[-110px] group-hover:skew-x-0 transition-all duration-300 ease-in-out skew-x-12"></div>
         </Link>
     );
 }
