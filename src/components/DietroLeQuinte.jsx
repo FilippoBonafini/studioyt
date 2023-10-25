@@ -1,11 +1,11 @@
 import React from "react";
 import Section from "./Section";
-import imageMeeting from "../images/meeting.jpg";
+import imageLounge from "../images/louge-area.jpg"
 import List, { ListItem } from "./List";
 
 const DietroLeQuinte = () => {
   return (
-    <Section title="Dietro le quinte" image={{ src: imageMeeting, shape: 1 }}>
+    <Section title="Dietro le quinte" image={{ src: imageLounge, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           Il “dietro le quinte” al Tulpa Studio consiste in diverse aree disposte intorno alla sala posa, in modo che tutto il processo di produzione sia interconnesso, fluido e di immediata implementazione.

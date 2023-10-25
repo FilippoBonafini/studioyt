@@ -25,7 +25,9 @@ const Card = ({ item, confermPop, load }) => {
         <FadeIn>
             <div className="inline-block text-black shadow-md relative transition-transform transform hover:scale-105 hover:shadow-2xl">
                 {load ? (
-                    <h1>load</h1>
+                    <div className="h-[350px] w-[400px] bg-blue-50 flex items-center justify-center">
+                        Loading
+                    </div>
                 ) : (<>
                     <Link scroll={true} href={'/rental/' + item.slug.current}>
                         <img
