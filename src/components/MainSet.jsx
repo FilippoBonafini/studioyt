@@ -1,7 +1,6 @@
 import React from "react";
 import Section from "./Section";
-import imageWhiteboard from "../images/whiteboard.jpg";
-import { TagList, TagListItem } from "./TagList";
+import imageWhiteboard from "../images/sound-stage.jpg";
 
 const MainSet = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "./Section";
-import imageLounge from "../images/louge-area.jpg"
+import imageLounge from "../images/editing-color-grading-suite.jpg"
 import List, { ListItem } from "./List";
 
 const DietroLeQuinte = () => {
